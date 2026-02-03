@@ -273,6 +273,13 @@ body {
     /* darker input inside lighter card */
 }
 
+/* Specific request: Black text on white bg for Skills inputs */
+#skills-list input {
+    background: #ffffff;
+    color: #000000;
+    font-weight: 600;
+}
+
 .list-item h4 {
     font-size: 1.4rem;
     color: var(--main-color);
