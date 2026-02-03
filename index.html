@@ -78,12 +78,6 @@
                         <h2 class="section-title">
                             About <span>Me</span></h2>
                         <div class="about-content" style="gap: 2rem;">
-                            <div class="about-img" style="flex: 0 0 auto;">
-                                <div class="img-placeholder-rect"
-                                    style="width: 10rem; height: 12rem; border-width: .3rem;">
-                                    <i class="fas fa-code" style="font-size: 4rem;"></i>
-                                </div>
-                            </div>
                             <div class="about-text">
                                 <h3 id="about-title" style="font-size: 1.8rem;">Frontend Dev</h3>
                                 <p id="about-desc" style="font-size: 1.3rem; margin: 1rem 0 1.5rem;">I am a passionate
@@ -221,10 +215,11 @@
                                 <p id="contact-address">Philippines</p>
                             </div>
                         </div>
-                        <form class="contact-form">
-                            <input type="text" placeholder="Your Name" required>
-                            <input type="email" placeholder="Your Email" required>
-                            <textarea rows="8" placeholder="Your Message" required></textarea>
+                        <form class="contact-form" id="contact-form">
+                            <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
+                            <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
+                            <textarea rows="8" id="message" name="message" placeholder="Your Message"
+                                required></textarea>
                             <button type="submit" class="btn">Send Message</button>
                         </form>
                     </div>
@@ -238,6 +233,7 @@
         <p>Copyright &copy; 2026 by Daryl Kyle Bristol. All Rights Reserved.</p>
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 

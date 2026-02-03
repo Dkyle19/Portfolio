@@ -302,9 +302,8 @@ section {
 
 .dashboard-row {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
-    flex-wrap: wrap;
-    /* Allow stacking on mobile */
 }
 
 .dashboard-card {

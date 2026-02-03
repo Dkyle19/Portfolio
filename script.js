@@ -164,33 +164,100 @@ function typeEffect() {
 document.addEventListener('DOMContentLoaded', () => {
     loadContent();
     if (typingText) typeEffect();
+    loadHeroProfilePicture(); // Load profile picture from admin
 });
 
-/* Image Upload Logic */
-const imgPlaceholder = document.getElementById('hero-img-placeholder');
-const fileInput = document.getElementById('hero-pic-upload');
+/* Load Profile Picture from Admin */
+function loadHeroProfilePicture() {
+    const savedPicture = localStorage.getItem('heroProfilePicture');
+    const imgPlaceholder = document.getElementById('hero-img-placeholder');
 
-if (imgPlaceholder && fileInput) {
-    imgPlaceholder.addEventListener('click', () => {
-        fileInput.click();
-    });
-
-    fileInput.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (event) => {
-                // Clear the icon and any existing content
-                imgPlaceholder.innerHTML = '';
-
-                // Create and append the image
-                const img = document.createElement('img');
-                img.src = event.target.result;
-                img.alt = 'Uploaded Profile Picture';
-                imgPlaceholder.appendChild(img);
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+    if (savedPicture && imgPlaceholder) {
+        imgPlaceholder.innerHTML = '';
+        const img = document.createElement('img');
+        img.src = savedPicture;
+        img.alt = 'Profile Picture';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '50%';
+        imgPlaceholder.appendChild(img);
+    }
 }
 
+
+
+/* EmailJS Contact Form */
+(function () {
+    // Initialize EmailJS with your public key
+    emailjs.init({
+        publicKey: "SKHI0wBIJzKQqRFVi",
+    });
+})();
+
+// Handle contact form submission
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector('.btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        // Log form data for debugging
+        console.log('Form submission started...');
+        console.log('Service ID:', 'service_bzgy727');
+        console.log('Template ID:', 'template_zxkwkry');
+        console.log('Form data:', {
+            from_name: this.from_name.value,
+            from_email: this.from_email.value,
+            message: this.message.value
+        });
+
+        // Send email using EmailJS
+        emailjs.sendForm(
+            'service_bzgy727',      // Your EmailJS service ID
+            'template_zxkwkry',     // Your EmailJS template ID
+            this
+        ).then(
+            function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+                submitBtn.textContent = 'Message Sent!';
+                submitBtn.style.background = '#00ff00';
+
+                // Reset form
+                contactForm.reset();
+
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            },
+            function (error) {
+                console.error('FAILED...', error);
+                console.error('Error details:', {
+                    status: error.status,
+                    text: error.text,
+                    message: error.message || 'No error message'
+                });
+
+                submitBtn.textContent = 'Failed to Send';
+                submitBtn.style.background = '#ff4d4d';
+
+                // Show error alert with details
+                alert('Email failed to send. Error: ' + (error.text || error.message || 'Unknown error') + '\n\nCheck browser console (F12) for details.');
+
+                // Reset button after 5 seconds
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 5000);
+            }
+        );
+    });
+}

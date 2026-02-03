@@ -43,6 +43,7 @@
                 <li data-tab="journey">My Journey</li>
                 <li data-tab="skills">Skills</li>
                 <li data-tab="contact">Contact Info</li>
+                <li data-tab="settings">Site Settings</li>
             </ul>
             <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
         </nav>
@@ -57,6 +58,25 @@
             <section id="hero-editor" class="editor-section active">
                 <h3>Edit Hero Profile</h3>
                 <div class="form-group">
+                    <label>Profile Picture</label>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="img-placeholder" id="admin-hero-img-preview"
+                            style="width: 8rem; height: 8rem; cursor: pointer; border: 2px dashed var(--main-color);">
+                            <i class="fas fa-user-astronaut" style="font-size: 4rem;"></i>
+                        </div>
+                        <div>
+                            <input type="file" id="admin-hero-pic-upload" accept="image/*" style="display: none;">
+                            <button type="button" class="btn"
+                                onclick="document.getElementById('admin-hero-pic-upload').click()"
+                                style="padding: 0.6rem 1.5rem; font-size: 1.3rem;">
+                                <i class="fas fa-upload"></i> Upload Picture
+                            </button>
+                            <small style="display: block; margin-top: 0.5rem; opacity: 0.7;">Click to upload or change
+                                profile picture</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label>Display Name</label>
                     <input type="text" id="edit-name" placeholder="e.g. Daryl Kyle Bristol">
                 </div>
@@ -68,6 +88,21 @@
                 <div class="form-group">
                     <label>Short Bio</label>
                     <textarea id="edit-hero-desc" rows="3" placeholder="I build high-quality..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Social Media Links</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+                        <input type="url" id="edit-social-linkedin" placeholder="LinkedIn URL">
+                        <input type="url" id="edit-social-github" placeholder="GitHub URL">
+                        <input type="url" id="edit-social-twitter" placeholder="Twitter URL">
+                        <input type="url" id="edit-social-instagram" placeholder="Instagram URL">
+                    </div>
+                    <small>Enter full URLs (e.g., https://linkedin.com/in/yourname)</small>
+                </div>
+                <div class="form-group">
+                    <label>Download CV Link</label>
+                    <input type="url" id="edit-cv-link" placeholder="CV/Resume URL or file path">
+                    <small>Link to your CV/Resume file</small>
                 </div>
             </section>
 
@@ -136,6 +171,17 @@
                 <div class="form-group">
                     <label>Address / Location</label>
                     <input type="text" id="edit-contact-address" placeholder="New York, USA">
+                </div>
+            </section>
+
+            <!-- Site Settings Editor -->
+            <section id="settings-editor" class="editor-section">
+                <h3>Site Settings</h3>
+                <div class="form-group">
+                    <label>Footer Copyright Text</label>
+                    <input type="text" id="edit-footer-text"
+                        placeholder="Copyright © 2026 by Your Name. All Rights Reserved.">
+                    <small>Text displayed at the bottom of your portfolio</small>
                 </div>
             </section>
 

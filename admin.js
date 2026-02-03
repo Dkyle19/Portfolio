@@ -39,7 +39,67 @@ document.addEventListener('DOMContentLoaded', () => {
             loginContainer.style.display = 'none';
             adminDashboard.style.display = 'flex';
             loadData(); // Load current data into inputs
+            loadProfilePicture(); // Load saved profile picture
         }, 300);
+    }
+
+    // --- Profile Picture Upload ---
+    const adminPicUpload = document.getElementById('admin-hero-pic-upload');
+    const adminPicPreview = document.getElementById('admin-hero-img-preview');
+
+    if (adminPicUpload && adminPicPreview) {
+        // Click preview to upload
+        adminPicPreview.addEventListener('click', () => {
+            adminPicUpload.click();
+        });
+
+        // Handle file selection
+        adminPicUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const imageData = event.target.result;
+
+                    // Update preview
+                    adminPicPreview.innerHTML = '';
+                    const img = document.createElement('img');
+                    img.src = imageData;
+                    img.alt = 'Profile Picture';
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.style.objectFit = 'cover';
+                    adminPicPreview.appendChild(img);
+
+                    // Save to localStorage
+                    localStorage.setItem('heroProfilePicture', imageData);
+
+                    // Update the public page immediately
+                    updatePublicProfilePicture(imageData);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    function loadProfilePicture() {
+        const savedPicture = localStorage.getItem('heroProfilePicture');
+        if (savedPicture && adminPicPreview) {
+            adminPicPreview.innerHTML = '';
+            const img = document.createElement('img');
+            img.src = savedPicture;
+            img.alt = 'Profile Picture';
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'cover';
+            adminPicPreview.appendChild(img);
+        }
+    }
+
+    function updatePublicProfilePicture(imageData) {
+        // This will be loaded by script.js on the public page
+        // We just need to save it to localStorage
+        console.log('Profile picture saved to localStorage');
     }
 
 
@@ -72,12 +132,19 @@ document.addEventListener('DOMContentLoaded', () => {
         name: document.getElementById('edit-name'),
         roles: document.getElementById('edit-roles'),
         heroDesc: document.getElementById('edit-hero-desc'),
+        socialLinkedin: document.getElementById('edit-social-linkedin'),
+        socialGithub: document.getElementById('edit-social-github'),
+        socialTwitter: document.getElementById('edit-social-twitter'),
+        socialInstagram: document.getElementById('edit-social-instagram'),
+        cvLink: document.getElementById('edit-cv-link'),
         // About
         aboutTitle: document.getElementById('edit-about-title'),
         aboutDesc: document.getElementById('edit-about-desc'),
         age: document.getElementById('edit-age'),
         email: document.getElementById('edit-email'),
-        location: document.getElementById('edit-location')
+        location: document.getElementById('edit-location'),
+        // Settings
+        footerText: document.getElementById('edit-footer-text')
     };
 
     // --- Data Management ---
@@ -87,14 +154,22 @@ document.addEventListener('DOMContentLoaded', () => {
         services: [],
         journey: [],
         skills: [],
-        contact: {}
+        contact: {},
+        settings: {}
     };
 
     const defaultData = {
         hero: {
             name: "Daryl Kyle Bristol",
             roles: "Frontend Developer, Web Designer, YouTuber",
-            desc: "I build high-quality web applications with a focus on modern design and performance."
+            desc: "I build high-quality web applications with a focus on modern design and performance.",
+            socialLinks: {
+                linkedin: "#",
+                github: "#",
+                twitter: "#",
+                instagram: "#"
+            },
+            cvLink: "#"
         },
         about: {
             title: "Frontend Dev",
@@ -122,6 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
             email: "darylkyle17@gmail.com",
             phone: "+63 945 517 3430",
             address: "Philippines"
+        },
+        settings: {
+            footerText: "Copyright © 2026 by Daryl Kyle Bristol. All Rights Reserved."
         }
     };
 
@@ -138,6 +216,15 @@ document.addEventListener('DOMContentLoaded', () => {
             inputs.name.value = currentData.hero.name || '';
             inputs.roles.value = currentData.hero.roles || '';
             inputs.heroDesc.value = currentData.hero.desc || '';
+
+            // Social links
+            if (currentData.hero.socialLinks) {
+                inputs.socialLinkedin.value = currentData.hero.socialLinks.linkedin || '';
+                inputs.socialGithub.value = currentData.hero.socialLinks.github || '';
+                inputs.socialTwitter.value = currentData.hero.socialLinks.twitter || '';
+                inputs.socialInstagram.value = currentData.hero.socialLinks.instagram || '';
+            }
+            inputs.cvLink.value = currentData.hero.cvLink || '';
         }
         if (currentData.about) {
             inputs.aboutTitle.value = currentData.about.title || '';
