@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daryl Kyle Bristol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout Container -->
+    <div class="main-layout">
+
+        <!-- Sidebar: Hero Profile -->
+        <aside class="profile-side">
+            <section id="home" class="hero">
+                <div class="container" style="width: 100%; padding: 0;">
+                    <div class="hero-content">
+                        <div class="hero-header-row"
+                            style="flex-direction: column; align-items: flex-start; gap: 1rem;">
+                            <div class="hero-img" style="flex: 0 0 auto;">
+                                <!-- Using a placeholder pattern or SVG if no image provided -->
+                                <div class="img-placeholder" id="hero-img-placeholder"
+                                    style="width: 10rem; height: 10rem;">
+                                    <i class="fas fa-user-astronaut" style="font-size: 5rem;"></i>
+                                </div>
+                                <input type="file" id="hero-pic-upload" accept="image/*" style="display: none;">
+                            </div>
+                            <h3>Hello, I'm</h3>
+                        </div>
+                        <h1 id="hero-name" style="font-size: 3rem; margin-top: 1rem;">Daryl Kyle Bristol</h1>
+                        <h3 style="font-size: 1.8rem;">And I'm a <span class="typing-text"></span></h3>
+                        <p id="hero-desc" style="font-size: 1.4rem;">I build high-quality web applications with a focus
+                            on modern
+                            design and performance.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <a href="#" class="btn">Download CV</a>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Right Content: Everything Else -->
+        <main class="content-side">
+
+            <!-- Split Row: About & Services -->
+            <div class="dashboard-row">
+
+                <!-- About Section -->
+                <section id="about" class="about dashboard-card">
+                    <div class="container" style="padding: 0;">
+                        <h2 class="section-title">
+                            About <span>Me</span></h2>
+                        <div class="about-content" style="gap: 2rem;">
+                            <div class="about-img" style="flex: 0 0 auto;">
+                                <div class="img-placeholder-rect"
+                                    style="width: 10rem; height: 12rem; border-width: .3rem;">
+                                    <i class="fas fa-code" style="font-size: 4rem;"></i>
+                                </div>
+                            </div>
+                            <div class="about-text">
+                                <h3 id="about-title" style="font-size: 1.8rem;">Frontend Dev</h3>
+                                <p id="about-desc" style="font-size: 1.3rem; margin: 1rem 0 1.5rem;">I am a passionate
+                                    developer with
+                                    extensive experience in building digital products.</p>
+                                <div class="info-list" style="margin-bottom: 1.5rem;">
+                                    <div class="info-item" style="font-size: 1.2rem; margin-bottom: .5rem;"><span
+                                            class="label">Age:</span> <span id="about-age-val" class="value">26</span>
+                                    </div>
+                                    <div class="info-item" style="font-size: 1.2rem; margin-bottom: .5rem;"><span
+                                            class="label">Loc:</span> <span id="about-loc-val" class="value">NY,
+                                            USA</span></div>
+                                    <div class="info-item" style="font-size: 1.2rem; margin-bottom: .5rem;"><span
+                                            class="label">Email:</span> <span id="about-email-val"
+                                            class="value">alex@example.com</span></div>
+                                </div>
+                                <a href="#contact" class="btn"
+                                    style="padding: .6rem 2rem; font-size: 1.2rem;">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Services / What I do (Moved Here) -->
+                <section class="services dashboard-card">
+                    <div class="container" style="padding: 0;">
+                        <h2 class="section-title">My
+                            <span>Services</span>
+                        </h2>
+                        <div id="services-grid" class="services-grid"
+                            style="grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                            <div class="service-card" style="padding: 1.5rem; border: 1px solid var(--bg-color);">
+                                <i class="fas fa-laptop-code" style="font-size: 2rem; margin-bottom: .5rem;"></i>
+                                <h3 style="font-size: 1.4rem; margin-bottom: .5rem;">Web Dev</h3>
+                                <p style="font-size: 1.1rem;">Fast, secure websites.</p>
+                            </div>
+                            <div class="service-card" style="padding: 1.5rem; border: 1px solid var(--bg-color);">
+                                <i class="fas fa-paint-brush" style="font-size: 2rem; margin-bottom: .5rem;"></i>
+                                <h3 style="font-size: 1.4rem; margin-bottom: .5rem;">UI Design</h3>
+                                <p style="font-size: 1.1rem;">Intuitive interfaces.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Split Row: Journey & Skills -->
+            <div class="dashboard-row">
+
+                <!-- My Journey (Experience) -->
+                <section id="experience" class="experience dashboard-card">
+                    <div class="container" style="padding: 0;">
+                        <h2 class="section-title">My
+                            <span>Journey</span>
+                        </h2>
+                        <div id="timeline-grid" class="timeline-grid" style="flex-direction: column; gap: 2rem;">
+                            <!-- Education Column -->
+                            <div class="timeline-column">
+                                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;"><i
+                                        class="fas fa-graduation-cap"></i> Education</h3>
+                                <div class="timeline-item" style="padding: 1.5rem;">
+                                    <div class="timeline-date" style="font-size: 1.2rem;">2020 - 2022</div>
+                                    <h4 style="font-size: 1.5rem;">Master in CS</h4>
+                                    <p style="font-size: 1.3rem;">Tech University, NY</p>
+                                </div>
+                            </div>
+                            <!-- Experience Column -->
+                            <div class="timeline-column">
+                                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;"><i class="fas fa-briefcase"></i>
+                                    Experience</h3>
+                                <div class="timeline-item" style="padding: 1.5rem;">
+                                    <div class="timeline-date" style="font-size: 1.2rem;">2022 - Present</div>
+                                    <h4 style="font-size: 1.5rem;">Senior Frontend</h4>
+                                    <p style="font-size: 1.3rem;">Tech Solutions Inc.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section id="skills" class="skills dashboard-card">
+                    <div class="container" style="padding: 0;">
+                        <h2 class="section-title">My
+                            <span>Skills</span>
+                        </h2>
+                        <div id="skills-wrapper" class="skills-wrapper"
+                            style="grid-template-columns: 1fr; gap: 1.5rem;">
+                            <div class="skill-box">
+                                <h3 style="font-size: 1.4rem;">HTML5</h3>
+                                <div class="progress-bar" style="height: .6rem;"><span style="width: 95%"></span></div>
+                            </div>
+                            <div class="skill-box">
+                                <h3 style="font-size: 1.4rem;">CSS3 / SCSS</h3>
+                                <div class="progress-bar" style="height: .6rem;"><span style="width: 90%"></span></div>
+                            </div>
+                            <div class="skill-box">
+                                <h3 style="font-size: 1.4rem;">JavaScript</h3>
+                                <div class="progress-bar" style="height: .6rem;"><span style="width: 85%"></span></div>
+                            </div>
+                            <div class="skill-box">
+                                <h3 style="font-size: 1.4rem;">React</h3>
+                                <div class="progress-bar" style="height: .6rem;"><span style="width: 80%"></span></div>
+                            </div>
+                            <div class="skill-box">
+                                <h3 style="font-size: 1.4rem;">Node.js</h3>
+                                <div class="progress-bar" style="height: .6rem;"><span style="width: 75%"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+
+
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact dashboard-card">
+                <div class="container" style="padding: 0;">
+                    <h2 class="section-title">Contact <span>Me</span></h2>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <p id="contact-email">darylkyle17@gmail.com</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <p id="contact-phone">+63 945 517 3430</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p id="contact-address">Philippines</p>
+                            </div>
+                        </div>
+                        <form class="contact-form">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <textarea rows="8" placeholder="Your Message" required></textarea>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 by Daryl Kyle Bristol. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

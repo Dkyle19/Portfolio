@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Admin | Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- Login Container -->
+    <div class="login-container" id="login-container">
+        <div class="login-box">
+            <h2>Super Admin</h2>
+            <p>Login to edit your portfolio</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p id="login-error" class="error-msg"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard (Hidden by default) -->
+    <div class="admin-dashboard" id="admin-dashboard" style="display: none;">
+        <nav class="sidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li data-tab="hero">Hero / Profile</li>
+                <li data-tab="about">About Me</li>
+                <li data-tab="services">Services</li>
+                <li data-tab="journey">My Journey</li>
+                <li data-tab="skills">Skills</li>
+                <li data-tab="contact">Contact Info</li>
+            </ul>
+            <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </nav>
+
+        <main class="dashboard-content">
+            <header>
+                <h1>Admin Dashboard</h1>
+                <button id="save-changes-btn" class="save-btn"><i class="fas fa-save"></i> Save All Changes</button>
+            </header>
+
+            <!-- Hero Section Editor -->
+            <section id="hero-editor" class="editor-section active">
+                <h3>Edit Hero Profile</h3>
+                <div class="form-group">
+                    <label>Display Name</label>
+                    <input type="text" id="edit-name" placeholder="e.g. Daryl Kyle Bristol">
+                </div>
+                <div class="form-group">
+                    <label>Roles (comma separated)</label>
+                    <input type="text" id="edit-roles" placeholder="e.g. Frontend Developer, Designer">
+                    <small>These will be typed in the animation.</small>
+                </div>
+                <div class="form-group">
+                    <label>Short Bio</label>
+                    <textarea id="edit-hero-desc" rows="3" placeholder="I build high-quality..."></textarea>
+                </div>
+            </section>
+
+            <!-- About Section Editor -->
+            <section id="about-editor" class="editor-section">
+                <h3>Edit About Me</h3>
+                <div class="form-group">
+                    <label>About Title</label>
+                    <input type="text" id="edit-about-title" placeholder="Frontend Developer & Designer">
+                </div>
+                <div class="form-group">
+                    <label>Full Bio</label>
+                    <textarea id="edit-about-desc" rows="6"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Details</label>
+                    <div class="split-inputs">
+                        <input type="text" id="edit-age" placeholder="Age">
+                        <input type="text" id="edit-email" placeholder="Email (About Section)">
+                        <input type="text" id="edit-location" placeholder="Location">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section Editor -->
+            <section id="services-editor" class="editor-section">
+                <h3>Edit Services</h3>
+                <p class="section-hint">Add or remove services offered.</p>
+                <div id="services-list" class="dynamic-list">
+                    <!-- Dynamic Items will be injected here -->
+                </div>
+                <button class="add-btn" onclick="addServiceItem()"><i class="fas fa-plus"></i> Add Service</button>
+            </section>
+
+            <!-- Journey Section Editor -->
+            <section id="journey-editor" class="editor-section">
+                <h3>Edit Journey</h3>
+                <p class="section-hint">Education and Experience items.</p>
+                <div id="journey-list" class="dynamic-list">
+                    <!-- Dynamic Items will be injected here -->
+                </div>
+                <button class="add-btn" onclick="addJourneyItem()"><i class="fas fa-plus"></i> Add Journey Item</button>
+            </section>
+
+            <!-- Skills Section Editor -->
+            <section id="skills-editor" class="editor-section">
+                <h3>Edit Skills</h3>
+                <p class="section-hint">Your technical skills and proficiency.</p>
+                <div id="skills-list" class="dynamic-list">
+                    <!-- Dynamic Items will be injected here -->
+                </div>
+                <button class="add-btn" onclick="addSkillItem()"><i class="fas fa-plus"></i> Add Skill</button>
+            </section>
+
+            <!-- Contact Section Editor -->
+            <section id="contact-editor" class="editor-section">
+                <h3>Edit Contact Info</h3>
+                <div class="form-group">
+                    <label>Contact Email</label>
+                    <input type="text" id="edit-contact-email" placeholder="Email displayed in footer/contact">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" id="edit-contact-phone" placeholder="+123 456 7890">
+                </div>
+                <div class="form-group">
+                    <label>Address / Location</label>
+                    <input type="text" id="edit-contact-address" placeholder="New York, USA">
+                </div>
+            </section>
+
+            <!-- Additional editors could go here -->
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
