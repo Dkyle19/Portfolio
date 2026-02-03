@@ -90,12 +90,47 @@ document.addEventListener('DOMContentLoaded', () => {
         contact: {}
     };
 
+    const defaultData = {
+        hero: {
+            name: "Daryl Kyle Bristol",
+            roles: "Frontend Developer, Web Designer, YouTuber",
+            desc: "I build high-quality web applications with a focus on modern design and performance."
+        },
+        about: {
+            title: "Frontend Dev",
+            desc: "I am a passionate developer with extensive experience in building digital products.",
+            age: "26",
+            email: "darylkyle17@gmail.com", // Synced with contact
+            location: "Philippines" // Synced with contact
+        },
+        services: [
+            { icon: "fas fa-laptop-code", title: "Web Dev", desc: "Fast, secure websites." },
+            { icon: "fas fa-paint-brush", title: "UI Design", desc: "Intuitive interfaces." }
+        ],
+        journey: [
+            { year: "2020 - 2022", title: "Master in CS", desc: "Tech University, NY" },
+            { year: "2022 - Present", title: "Senior Frontend", desc: "Tech Solutions Inc." }
+        ],
+        skills: [
+            { name: "HTML5", percentage: "95" },
+            { name: "CSS3 / SCSS", percentage: "90" },
+            { name: "JavaScript", percentage: "85" },
+            { name: "React", percentage: "80" },
+            { name: "Node.js", percentage: "75" }
+        ],
+        contact: {
+            email: "darylkyle17@gmail.com",
+            phone: "+63 945 517 3430",
+            address: "Philippines"
+        }
+    };
+
     function loadData() {
         const stored = localStorage.getItem('portfolioData');
         if (stored) {
             currentData = JSON.parse(stored);
         } else {
-            // Default/Initial Data could go here if needed
+            currentData = defaultData;
         }
 
         // Populate Static Inputs
