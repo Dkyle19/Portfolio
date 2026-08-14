@@ -8,8 +8,8 @@ export default function About() {
   const pillars = [
     {
       icon: Layout,
-      title: "UI/UX & Frontend Craftsmanship",
-      description: "Transforming design prototypes from Figma into responsive, accessible, and high-performance React and Tailwind CSS interfaces.",
+      title: "Frontend Engineering",
+      description: "Building responsive, accessible, and high-performance React and Tailwind CSS client interfaces backed by modern component architectures.",
       color: "from-cyan-500/20 to-blue-500/10",
       borderColor: "group-hover:border-cyan-500/40",
       iconColor: "text-cyan-400"
@@ -66,7 +66,7 @@ export default function About() {
           <div className="lg:col-span-7 glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 space-y-4">
             <h3 className="text-xl font-bold text-white flex items-center gap-2">
               <User className="w-5 h-5 text-cyan-400" />
-              <span>Full-Stack Engineer with a Passion for UI/UX</span>
+              <span>Full-Stack Software Engineer</span>
             </h3>
             
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -115,7 +115,7 @@ export default function About() {
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/5">
                   <span className="text-slate-400">Primary Focus</span>
-                  <span className="font-medium text-white text-right">Full Stack & UI/UX</span>
+                  <span className="font-medium text-white text-right">Full-Stack Development</span>
                 </div>
                 <div className="flex justify-between py-2">
                   <span className="text-slate-400">Status</span>

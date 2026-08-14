@@ -32,7 +32,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-xs text-slate-400 max-w-md">
-              Computer Science Graduate ('25) • Full-Stack Developer & UI/UX Architect based in Pangasinan, Philippines.
+              Computer Science Graduate ('25) • Full-Stack Developer based in Pangasinan, Philippines.
             </p>
           </div>
 

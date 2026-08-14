@@ -31,7 +31,7 @@ export default function Skills() {
       items: skills.databasesCloud
     },
     {
-      title: "Tools & UI/UX Design",
+      title: "Tools & Developer Ecosystem",
       icon: Wrench,
       color: "from-amber-500/20 to-orange-500/10",
       accent: "text-amber-400",

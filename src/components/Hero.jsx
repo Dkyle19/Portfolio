@@ -36,7 +36,7 @@ export default function Hero({ onOpenResumeModal }) {
                 <span className="text-gradient">Daryl Kyle S. Bristol</span>
               </h1>
               <p className="text-xl sm:text-2xl font-semibold text-cyan-400/90 font-mono">
-                Full-Stack Developer & UI/UX Specialist
+                Full-Stack Developer
               </p>
             </div>
 
@@ -126,7 +126,7 @@ export default function Hero({ onOpenResumeModal }) {
                   {personal.name}
                 </h3>
                 <p className="text-xs text-cyan-400 font-mono mt-1">
-                  Full Stack Engineer & UI Architect
+                  Full-Stack Software Engineer
                 </p>
                 <p className="text-xs text-slate-400 mt-2 line-clamp-2">
                   PHINMA UPANG College Urdaneta • Graduating Class of 2025

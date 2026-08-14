@@ -3,8 +3,8 @@ export const portfolioData = {
     name: "Daryl Kyle S. Bristol",
     shortName: "Daryl Bristol",
     nickname: "Daryl",
-    role: "Full Stack Developer & UI/UX Specialist",
-    tagline: "Building high-performance web applications, scalable cloud backends, and pixel-perfect user experiences.",
+    role: "Full Stack Developer",
+    tagline: "Building high-performance web applications, scalable backend systems, and robust database architectures.",
     bio: "Computer Science graduate with experience as a Full Stack Developer at Urdaneta City University. Proficient in JavaScript, React, PHP, and PostgreSQL, with hands-on experience developing and maintaining scalable web applications, responsive user interfaces, backend systems, and database solutions. Experienced in implementing new features, optimizing system performance, troubleshooting technical issues, and ensuring a seamless user experience. Demonstrates strong problem-solving abilities, adaptability, and effective collaboration within development teams.",
     email: "darylkyle17@gmail.com",
     phone: "+63 945-517-3430",
@@ -205,7 +205,7 @@ export const portfolioData = {
       { name: "Airtable", level: "Intermediate", icon: "airtable", experience: "1+ Year" }
     ],
     toolsDesign: [
-      { name: "Figma (UI/UX Prototyping)", level: "Advanced", icon: "figma", experience: "3+ Years", highlight: true },
+      { name: "Figma (Wireframing & Specs)", level: "Advanced", icon: "figma", experience: "3+ Years", highlight: true },
       { name: "Git & GitHub", level: "Advanced", icon: "git", experience: "4+ Years", highlight: true },
       { name: "Postman / API Testing", level: "Proficient", icon: "postman", experience: "2+ Years" },
       { name: "Agile & Scrum Workflow", level: "Proficient", icon: "agile", experience: "2+ Years" },
@@ -263,7 +263,7 @@ export const portfolioData = {
       location: "Urdaneta City, Pangasinan",
       period: "2021 – 2025",
       badge: "Graduating Class of 2025",
-      description: "Focused on Software Engineering, Database Systems, Object-Oriented Programming, Mobile App Architecture, and UI/UX Design. Lead developer and project analyst for undergraduate thesis projects (Leo PropertEase & Barangay eConn).",
+      description: "Focused on Software Engineering, Database Systems, Object-Oriented Programming, Mobile App Architecture, and Full-Stack Web Systems. Lead developer and project analyst for undergraduate thesis projects (Leo PropertEase & Barangay eConn).",
       highlights: [
         "Project Analyst & Developer for thesis projects 'Leo PropertEase' and 'Barangay eConn'",
         "Dean's List / Academic Excellence recognition",
