@@ -120,6 +120,31 @@ export default function Skills() {
           })}
         </div>
 
+        {/* Continuous Learning / Next Tech Focus */}
+        <div className="mt-12 glass-panel p-6 sm:p-8 rounded-2xl border border-cyan-500/20 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-transparent flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
+              <Sparkles className="w-6 h-6 text-cyan-400" />
+            </div>
+            <div>
+              <h4 className="text-base font-bold text-white flex items-center gap-2">
+                <span>Continuous Learning & Exploring Next</span>
+                <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 rounded-full">Active Focus</span>
+              </h4>
+              <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                Expanding full-stack engineering proficiency in Next.js 15 App Router, TypeScript architectures, Docker containerization, and automated CI/CD deployment pipelines.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-2 flex-shrink-0">
+            {['Next.js 15', 'TypeScript', 'Docker', 'CI/CD Pipelines'].map((tag) => (
+              <span key={tag} className="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-cyan-300 font-mono text-xs font-semibold">
+                ⚡ {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

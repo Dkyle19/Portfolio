@@ -244,20 +244,20 @@ export default function ResumeModal({ onClose }) {
                 </div>
               </div>
 
-              {/* 1-Page Resume Card */}
+              {/* Resume Card */}
               <div className="glass-panel p-6 rounded-2xl border border-white/10 flex flex-col justify-between items-center text-center space-y-4 hover:border-purple-500/40 transition-colors">
                 <div className="p-4 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
                   <FolderDown className="w-10 h-10" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white">Targeted 1-Page Resume</h4>
+                  <h4 className="text-lg font-bold text-white">Resume</h4>
                   <p className="text-xs text-slate-400 mt-1">
-                    Streamlined summary tailored for recruiter screening, highlighting core tech stack, recent roles, and contact channels.
+                    Professional resume highlighting core technical skills, full-stack software development experience, and key projects.
                   </p>
                   <div className="flex items-center justify-center gap-2 mt-3 text-xs font-mono text-purple-300">
                     <span>PDF Format</span>
                     <span>•</span>
-                    <span>Concise 1-Page</span>
+                    <span>Official Document</span>
                   </div>
                 </div>
 

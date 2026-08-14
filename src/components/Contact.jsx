@@ -18,10 +18,17 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(personal.phone);
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2500);
   };
 
   const handleSubmit = async (e) => {
@@ -149,16 +156,25 @@ export default function Contact() {
                 </div>
 
                 {/* Phone Item */}
-                <div className="flex items-center gap-3 p-3.5 rounded-xl bg-slate-900/70 border border-white/5 group hover:border-purple-500/30 transition-colors">
-                  <div className="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400">
-                    <Phone className="w-4 h-4" />
+                <div className="flex items-start justify-between p-3.5 rounded-xl bg-slate-900/70 border border-white/5 group hover:border-purple-500/30 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-mono text-slate-400 uppercase">Phone</span>
+                      <a href={`tel:${personal.phone}`} className="block text-xs sm:text-sm font-semibold text-white hover:text-purple-300 transition-colors">
+                        {personal.phone}
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-[11px] font-mono text-slate-400 uppercase">Phone</span>
-                    <a href={`tel:${personal.phone}`} className="block text-xs sm:text-sm font-semibold text-white hover:text-purple-300 transition-colors">
-                      {personal.phone}
-                    </a>
-                  </div>
+                  <button
+                    onClick={handleCopyPhone}
+                    className="p-2 rounded-lg text-slate-400 hover:text-purple-300 hover:bg-white/5 transition-colors"
+                    title="Copy Phone Number"
+                  >
+                    {copiedPhone ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                  </button>
                 </div>
 
                 {/* Location Item */}

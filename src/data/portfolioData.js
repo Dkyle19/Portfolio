@@ -18,10 +18,10 @@ export const portfolioData = {
   },
 
   stats: [
-    { label: "Degree & Year", value: "BSCS '25", sublabel: "PHINMA UPANG College Urdaneta" },
-    { label: "Systems Built", value: "3+", sublabel: "Enterprise, Mobile & Thesis" },
-    { label: "Core Technologies", value: "16+", sublabel: "Frontend, Backend, Cloud & DB" },
-    { label: "Professional Certs", value: "4+", sublabel: "Cisco, Wadhwani & Industry" }
+    { label: "Degree & Major", value: "BSCS '25", sublabel: "PHINMA UPang Graduate" },
+    { label: "Enterprise OJT", value: "504+ Hrs", sublabel: "Cura Property Management" },
+    { label: "Systems Built", value: "3+", sublabel: "Full-Stack Web & Mobile" },
+    { label: "Verified Credentials", value: "4+", sublabel: "Cisco & Industry Certs" }
   ],
 
   projects: [
@@ -262,7 +262,7 @@ export const portfolioData = {
       institution: "PHINMA UPANG College Urdaneta",
       location: "Urdaneta City, Pangasinan",
       period: "2021 – 2025",
-      badge: "Graduating Class of 2025",
+      badge: "Graduated Class of 2025",
       description: "Focused on Software Engineering, Database Systems, Object-Oriented Programming, Mobile App Architecture, and Full-Stack Web Systems. Lead developer and project analyst for undergraduate thesis projects (Leo PropertEase & Barangay eConn).",
       highlights: [
         "Project Analyst & Developer for thesis projects 'Leo PropertEase' and 'Barangay eConn'",

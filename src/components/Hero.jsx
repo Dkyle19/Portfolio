@@ -129,7 +129,7 @@ export default function Hero({ onOpenResumeModal }) {
                   Full-Stack Software Engineer
                 </p>
                 <p className="text-xs text-slate-400 mt-2 line-clamp-2">
-                  PHINMA UPANG College Urdaneta • Graduating Class of 2025
+                  PHINMA UPANG College Urdaneta • Graduated Class of 2025
                 </p>
 
                 {/* Quick Skills Mini-Badges */}
