@@ -8,7 +8,7 @@ export default function Certifications() {
   return (
     <section id="certifications" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-3">
@@ -16,7 +16,7 @@ export default function Certifications() {
             <span>Verified Credentials</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Honors & <span className="text-gradient">Certifications</span>
+            <span className="text-gradient">Certifications</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-full mt-3"></div>
           <p className="text-slate-400 max-w-2xl text-sm sm:text-base mt-4">
@@ -34,6 +34,7 @@ export default function Certifications() {
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
                   <span className="px-2.5 py-0.5 text-[11px] font-bold text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 rounded-full">
+
                     {cert.badge}
                   </span>
                   <span className="text-xs font-mono text-slate-400">

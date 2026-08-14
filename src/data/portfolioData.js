@@ -299,7 +299,7 @@ export const portfolioData = {
       date: "November 29, 2024",
       credentialId: "WSF-JOBREADY-123HRS",
       description: "Successfully completed the JobReady Employability Skills course (123 hours) from PHINMA - University of Pangasinan. Certificate signed by Ajay Kela, CEO of Wadhwani Foundation.",
-      badge: "Employability Honors"
+      badge: "Employability Certification"
     },
     {
       title: "Introduction to Modern AI",
