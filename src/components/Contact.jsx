@@ -212,8 +212,7 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="e.g. John Doe"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 focus:border-cyan-400 focus:outline-none text-slate-100 text-sm placeholder:text-slate-500 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 focus:border-cyan-400 focus:outline-none text-slate-100 text-sm transition-colors"
                     />
                   </div>
 
@@ -228,8 +227,7 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="e.g. john@example.com"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 focus:border-cyan-400 focus:outline-none text-slate-100 text-sm placeholder:text-slate-500 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 focus:border-cyan-400 focus:outline-none text-slate-100 text-sm transition-colors"
                     />
                   </div>
                 </div>
@@ -244,8 +242,7 @@ export default function Contact() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="e.g. Job Opportunity / Collaboration / Thesis Inquiry"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 focus:border-cyan-400 focus:outline-none text-slate-100 text-sm placeholder:text-slate-500 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 focus:border-cyan-400 focus:outline-none text-slate-100 text-sm transition-colors"
                   />
                 </div>
 
