@@ -96,10 +96,8 @@ export default function Skills() {
                         </span>
                       )}
                     </div>
-                    <div className="flex items-center gap-2 text-[11px] font-mono text-slate-400">
+                    <div className="flex items-center gap-2 text-[11px] font-mono text-slate-400 mt-0.5">
                       <span className="text-cyan-400 font-semibold">{skill.level}</span>
-                      <span>•</span>
-                      <span>{skill.experience}</span>
                     </div>
                   </div>
                 </div>
@@ -129,10 +127,8 @@ export default function Skills() {
                         </span>
                       )}
                     </div>
-                    <div className="flex items-center gap-2 text-[11px] font-mono text-slate-400">
+                    <div className="flex items-center gap-2 text-[11px] font-mono text-slate-400 mt-0.5">
                       <span className="text-purple-400 font-semibold">{skill.level}</span>
-                      <span>•</span>
-                      <span>{skill.experience}</span>
                     </div>
                   </div>
                 </div>
@@ -215,7 +211,7 @@ export default function Skills() {
                     </span>
                     <span className="text-slate-500">•</span>
                     <span className="text-[11px] text-slate-400">
-                      {skill.experience}
+                      {skill.category}
                     </span>
                   </div>
 
