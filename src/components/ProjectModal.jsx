@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, ExternalLink, CheckCircle2, Layers, Tag, Shield, Calendar, UserCheck, Sparkles, Image as ImageIcon } from 'lucide-react';
-import { GithubIcon } from './SocialIcons';
 
 export default function ProjectModal({ project, onClose }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -247,23 +246,12 @@ export default function ProjectModal({ project, onClose }) {
           {/* External Action Links */}
           <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-white/10 rounded-lg transition-colors"
-                >
-                  <GithubIcon className="w-4 h-4" />
-                  <span>GitHub Repository</span>
-                </a>
-              )}
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-cyan-600 hover:bg-cyan-500 rounded-lg transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-cyan-600 hover:bg-cyan-500 rounded-lg transition-colors shadow-md shadow-cyan-500/20"
                 >
                   <ExternalLink className="w-4 h-4" />
                   <span>Live Demo</span>

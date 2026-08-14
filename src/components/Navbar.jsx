@@ -24,15 +24,24 @@ export default function Navbar({ onOpenResumeModal }) {
   ];
 
   return (
-    <nav
+    <header
       id="main-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#07090e]/85 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/40 py-3.5'
-          : 'bg-transparent py-5'
+          ? 'bg-[#07090e]/85 backdrop-blur-xl border-b border-cyan-500/20 shadow-xl shadow-black/60 py-3.5'
+          : 'bg-gradient-to-b from-[#07090e]/80 via-[#07090e]/40 to-transparent backdrop-blur-md py-5 border-b border-white/5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Top Cyber Accent Line */}
+      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/70 via-indigo-500/50 to-transparent pointer-events-none" />
+
+      {/* Header Subtle Matching Background Texture Cover */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-15 pointer-events-none mix-blend-screen"
+        style={{ backgroundImage: `url('/assets/backgrounds/header-footer-cover.png')` }}
+      />
+
+      <nav className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo / Brand */}
           <a
@@ -55,7 +64,7 @@ export default function Navbar({ onOpenResumeModal }) {
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
+          <div className="hidden md:flex items-center gap-1 bg-slate-900/70 p-1.5 rounded-full border border-cyan-500/20 backdrop-blur-md shadow-inner shadow-cyan-500/5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -109,11 +118,11 @@ export default function Navbar({ onOpenResumeModal }) {
             </button>
           </div>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#07090e]/95 backdrop-blur-2xl border-b border-white/10 px-4 pt-3 pb-6 animate-modal">
+        <div className="md:hidden bg-[#07090e]/95 backdrop-blur-2xl border-b border-cyan-500/20 px-4 pt-3 pb-6 animate-modal">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a
@@ -148,6 +157,6 @@ export default function Navbar({ onOpenResumeModal }) {
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

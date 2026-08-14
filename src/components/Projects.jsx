@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Layers, ArrowRight, Eye, Sparkles, FolderCode, ExternalLink, Code2 } from 'lucide-react';
+import { Eye, FolderCode } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
-import { GithubIcon } from './SocialIcons';
 
 export default function Projects() {
   const { projects } = portfolioData;
@@ -141,27 +140,15 @@ export default function Projects() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex items-center gap-3 pt-2">
+                  <div className="pt-2">
                     <button
                       id={`view-details-${project.id}-btn`}
                       onClick={() => setActiveProjectModal(project)}
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-slate-800/80 hover:bg-cyan-600 border border-white/10 hover:border-cyan-400 transition-all duration-300 shadow-sm"
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-slate-800/80 hover:bg-cyan-600 border border-white/10 hover:border-cyan-400 transition-all duration-300 shadow-sm"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>Details & Screenshots</span>
                     </button>
-
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors"
-                        aria-label="GitHub Repository"
-                      >
-                        <GithubIcon className="w-4 h-4" />
-                      </a>
-                    )}
                   </div>
                 </div>
 
