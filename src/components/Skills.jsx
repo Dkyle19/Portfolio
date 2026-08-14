@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Sparkles } from 'lucide-react';
+import { Cpu, Sparkles, CheckCircle2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { TechLogo } from './TechLogos';
 
@@ -86,48 +86,86 @@ export default function Skills() {
 
         </div>
 
-        {/* Core Professional Work Competencies Badges */}
-        <div className="mt-12 glass-panel p-5 sm:p-6 rounded-2xl border border-white/10 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-xs font-mono text-slate-400 uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Core Engineering Competencies</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            {coreWorkSkills.map((cSkill, idx) => (
-              <span
-                key={idx}
-                className="px-3.5 py-1.5 rounded-xl text-xs font-medium text-slate-200 bg-white/5 border border-white/10 hover:border-cyan-500/30 hover:text-white transition-colors"
-              >
-                ✓ {cSkill}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* CONTINUOUS LEARNING / NEXT TECH FOCUS */}
-        <div className="mt-6 glass-panel p-6 sm:p-8 rounded-2xl border border-cyan-500/20 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-transparent flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
-              <Sparkles className="w-6 h-6 text-cyan-400 animate-pulse" />
-            </div>
+        {/* ========================================================================= */}
+        {/* 2. SIDE-BY-SIDE: COMPETENCIES (LEFT) & CONTINUOUS LEARNING (RIGHT) */}
+        {/* ========================================================================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+          
+          {/* LEFT SIDE: Core Engineering Competencies */}
+          <div className="glass-panel p-6 sm:p-7 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-cyan-500/30 transition-all duration-300">
             <div>
-              <h4 className="text-base font-bold text-white flex items-center gap-2">
-                <span>Continuous Learning & Leveling Up</span>
-                <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 rounded-full">Active Focus</span>
-              </h4>
-              <p className="text-xs sm:text-sm text-slate-300 mt-1">
-                Expanding full-stack engineering proficiency in Next.js 15 App Router, TypeScript architectures, Docker containerization, and automated CI/CD deployment pipelines.
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                    Core Engineering Competencies
+                  </h3>
+                  <p className="text-xs text-slate-400 font-mono">
+                    Professional strengths & agile team collaboration
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                Proven ability to deliver high-quality code, communicate technical decisions effectively, adapt swiftly to evolving stacks, and collaborate seamlessly across cross-functional teams.
               </p>
             </div>
+
+            <div className="flex flex-wrap items-center gap-2.5 pt-4 border-t border-white/10">
+              {coreWorkSkills.map((cSkill, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-200 bg-white/5 border border-white/10 hover:border-cyan-500/40 hover:bg-cyan-500/10 hover:text-cyan-200 transition-all"
+                >
+                  <span className="text-cyan-400 font-bold">✓</span>
+                  <span>{cSkill}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-wrap items-center gap-2 flex-shrink-0">
-            {['Next.js 15', 'TypeScript', 'Docker', 'CI/CD Pipelines'].map((tag) => (
-              <div key={tag} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-cyan-300 font-mono text-xs font-semibold">
-                <TechLogo name={tag} className="w-4 h-4" />
-                <span>{tag}</span>
+
+          {/* RIGHT SIDE: Continuous Learning & Leveling Up */}
+          <div className="glass-panel p-6 sm:p-7 rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-purple-500/5 to-transparent flex flex-col justify-between hover:border-purple-500/40 transition-all duration-300">
+            <div>
+              <div className="flex items-center justify-between gap-3 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400">
+                    <Sparkles className="w-5 h-5 animate-pulse" />
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                      Continuous Learning & Leveling Up
+                    </h3>
+                    <p className="text-xs text-purple-300 font-mono">
+                      Expanding full-stack engineering horizons
+                    </p>
+                  </div>
+                </div>
+                <span className="hidden sm:inline-block px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider bg-purple-500/20 text-purple-300 border border-purple-500/40 rounded-full">
+                  Active Focus
+                </span>
               </div>
-            ))}
+
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                Actively expanding expertise in Next.js 15 App Router, TypeScript scalable architectures, Docker containerization, and automated CI/CD deployment pipelines.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2.5 pt-4 border-t border-white/10">
+              {['Next.js 15', 'TypeScript', 'Docker', 'CI/CD Pipelines'].map((tag) => (
+                <div
+                  key={tag}
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-white/10 hover:border-purple-500/40 text-purple-200 font-mono text-xs font-semibold transition-all hover:bg-purple-500/10"
+                >
+                  <TechLogo name={tag} className="w-4 h-4" />
+                  <span>{tag}</span>
+                </div>
+              ))}
+            </div>
           </div>
+
         </div>
 
       </div>
