@@ -5,7 +5,7 @@ export const portfolioData = {
     nickname: "Daryl",
     role: "Full Stack Developer",
     tagline: "Building high-performance web applications, scalable backend systems, and robust database architectures.",
-    bio: "Computer Science graduate with hands-on experience as a Full Stack Developer at Urdaneta City University. Proficient in modern web technologies including JavaScript, React, PHP, and PostgreSQL, with a proven track record of developing and maintaining scalable web applications and responsive user interfaces. Skilled in backend systems, database management, enhancing operational modules (billing, enrollment, and student records), and optimizing overall system performance. Brings strong problem-solving abilities, adaptability, and effective team collaboration skills to fast-paced technical environments.",
+    bio: "Computer Science graduate with 7 months of professional experience as a Full Stack Developer at Urdaneta City University (UCU) MIS. Proficient in modern web technologies including JavaScript, React, PHP, and PostgreSQL, with a proven track record of developing and maintaining scalable web applications and responsive user interfaces. Skilled in backend systems, database management, enhancing operational modules (billing, enrollment, and student records), and optimizing overall system performance. Brings strong problem-solving abilities, adaptability, and effective team collaboration skills to fast-paced technical environments.",
     email: "darylkyle17@gmail.com",
     phone: "+63 945-517-3430",
     location: "Urdaneta City, Pangasinan, Philippines",
@@ -19,7 +19,7 @@ export const portfolioData = {
 
   stats: [
     { label: "Degree & Major", value: "BSCS '25", sublabel: "PHINMA UPang Graduate" },
-    { label: "Enterprise OJT", value: "504+ Hrs", sublabel: "Cura Property Management" },
+    { label: "Work Experience", value: "7 Months", sublabel: "Full-Stack Dev @ UCU" },
     { label: "Systems Built", value: "3+", sublabel: "Full-Stack Web & Mobile" },
     { label: "Verified Credentials", value: "4+", sublabel: "Cisco & Industry Certs" }
   ],
@@ -137,8 +137,8 @@ export const portfolioData = {
       badge: "Industry Internship Project",
       featured: true,
       thumbnail: "/assets/projects/cura/Web%20Design.jpg",
-      description: "Commercial web administration and property leasing portal built during a 504-hour On-the-Job Training internship at Cura Property Management Corp. in Baguio City. Developed front-end interfaces for property listings, unit directories, and tenant search filters.",
-      longDescription: "Engineered at Cura Property Management Corp. (Baguio City) as a Front-End Computer Science Intern. Responsibilities included building responsive UI components with Laravel and Tailwind CSS, implementing property search and filter interfaces, integrating AWS S3 for document storage, and maintaining the MariaDB database. Internship ran from December 9, 2024 to March 8, 2025 (504 hours total).",
+      description: "Commercial web administration and property leasing portal built during a 3-month On-the-Job Training internship at Cura Property Management Corp. in Baguio City. Developed front-end interfaces for property listings, unit directories, and tenant search filters.",
+      longDescription: "Engineered at Cura Property Management Corp. (Baguio City) as a Front-End Computer Science Intern. Responsibilities included building responsive UI components with Laravel and Tailwind CSS, implementing property search and filter interfaces, integrating AWS S3 for document storage, and maintaining the MariaDB database. Internship ran from December 9, 2024 to March 8, 2025 (3 months full-time).",
       role: "Front-End Developer Intern",
       period: "Dec 2024 – Mar 2025",
       type: "Enterprise Web Suite",
@@ -225,9 +225,9 @@ export const portfolioData = {
       role: "Full Stack Developer",
       company: "Management Information System (MIS) — Urdaneta City University",
       location: "Urdaneta City, Pangasinan",
-      period: "Jan 2026 – Present",
+      period: "7 Months Experience",
       type: "Full-Time",
-      description: "Developed and maintained web-based information systems for the university's administrative and academic operations using JavaScript, React, PHP, and PostgreSQL. Contributed to both front-end and back-end development, ensuring reliable performance, scalability, and a user-friendly experience.",
+      description: "7 months of hands-on experience developing and maintaining mission-critical web-based information systems for university administrative and academic operations using JavaScript, React, PHP, and PostgreSQL. Contributed to both front-end and back-end development, ensuring high reliability, data integrity, and optimal performance.",
       achievements: [
         "Designed and implemented responsive user interfaces using React and modern web technologies.",
         "Developed and maintained backend functionalities and database structures using PHP and PostgreSQL.",
@@ -242,8 +242,8 @@ export const portfolioData = {
       company: "Cura Property Management Corp.",
       location: "Baguio City, Philippines",
       period: "Dec 2024 – Mar 2025",
-      type: "Internship (504 Hours OJT)",
-      description: "Completed 504 hours of On-the-Job Training, developing enterprise client-facing web interfaces, property listing pages, and administrative dashboards for a commercial real estate firm.",
+      type: "Internship (3 Months OJT)",
+      description: "Completed 3 months of On-the-Job Training, developing enterprise client-facing web interfaces, property listing pages, and administrative dashboards for a commercial real estate firm.",
       achievements: [
         "Built dynamic, responsive web interfaces using Laravel and Tailwind CSS based on Figma mockups.",
         "Integrated AWS storage for secure tenant lease contract storage and cloud asset pipelines.",
@@ -287,8 +287,8 @@ export const portfolioData = {
       title: "Certificate of Completion — On-the-Job Training (Computer Science Intern)",
       issuer: "Cura Property Management Corp.",
       date: "March 10, 2025",
-      credentialId: "CPMC-OJT-504HRS",
-      description: "Completed 504 hours of On-the-Job Training as a Computer Science Intern from December 9, 2024 to March 8, 2025. Recognized by Laurence N. Ferrer (Head of Human Resources) and Pamela L. Tecson (Chief Operations Officer).",
+      credentialId: "CPMC-OJT-3MOS",
+      description: "Completed 3 months of On-the-Job Training as a Computer Science Intern from December 9, 2024 to March 8, 2025. Recognized by Laurence N. Ferrer (Head of Human Resources) and Pamela L. Tecson (Chief Operations Officer).",
       badge: "Verified Industry Credential"
     },
     {

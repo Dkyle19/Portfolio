@@ -8,12 +8,11 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeProjectModal, setActiveProjectModal] = useState(null);
 
-  const categories = ['All', 'Full-Stack Web', 'Android Apps', 'Enterprise Systems'];
+  const categories = ['All', 'Android Apps', 'Enterprise Systems'];
 
   const filteredProjects = selectedCategory === 'All'
     ? projects
     : projects.filter((p) => {
-        if (selectedCategory === 'Full-Stack Web') return p.type.toLowerCase().includes('web') || p.techStack.includes('Laravel') || p.techStack.includes('C#');
         if (selectedCategory === 'Android Apps') return p.type.toLowerCase().includes('mobile') || p.type.toLowerCase().includes('android') || p.techStack.includes('Android');
         if (selectedCategory === 'Enterprise Systems') return p.category.toLowerCase().includes('enterprise') || p.techStack.includes('AWS') || p.techStack.includes('Airtable');
         return true;

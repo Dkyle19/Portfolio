@@ -70,11 +70,11 @@ export default function About() {
             </h3>
             
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              I am a Bachelor of Science in Computer Science graduate ('25) from PHINMA UPANG College Urdaneta. Throughout my academic journey and professional engagements, I have focused on solving real-world challenges through full-stack software development and human-centered design.
+              I am a Bachelor of Science in Computer Science graduate ('25) from PHINMA UPANG College Urdaneta with <strong className="text-cyan-300 font-semibold">7 months of professional experience</strong> as a Full-Stack Developer at <strong className="text-white font-semibold">Urdaneta City University (UCU) MIS</strong>. Throughout my career and academic engagements, I have focused on building reliable administrative portals, scalable backend architectures, and human-centered user interfaces.
             </p>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              During my internship at <strong className="text-white font-semibold">Cura Property Management Corp.</strong>, I built client-facing portals and integrated AWS cloud asset systems. Additionally, as lead developer for two major capstone systems—<strong className="text-cyan-300 font-semibold">Leo PropertEase</strong> (Property Leasing Platform) and <strong className="text-purple-300 font-semibold">Barangay eConn</strong> (Emergency Dispatch Mobile System)—I have developed a deep appreciation for scalable software engineering from database modeling to final UI polish.
+              In addition to developing university-wide enrollment, billing, and student record modules, I completed an enterprise internship at <strong className="text-white font-semibold">Cura Property Management Corp.</strong> and engineered two major capstone systems: <strong className="text-cyan-300 font-semibold">Leo PropertEase</strong> (Property Leasing Platform) and <strong className="text-purple-300 font-semibold">Barangay eConn</strong> (Emergency Dispatch Mobile System).
             </p>
 
             <div className="pt-4 border-t border-white/10 flex flex-wrap gap-3">
