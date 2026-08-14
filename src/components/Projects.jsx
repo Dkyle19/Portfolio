@@ -14,7 +14,7 @@ export default function Projects() {
     ? projects
     : projects.filter((p) => {
         if (selectedCategory === 'Android Apps') return p.type.toLowerCase().includes('mobile') || p.type.toLowerCase().includes('android') || p.techStack.includes('Android');
-        if (selectedCategory === 'Enterprise Systems') return p.category.toLowerCase().includes('enterprise') || p.techStack.includes('AWS') || p.techStack.includes('Airtable');
+        if (selectedCategory === 'Enterprise Systems') return p.category.toLowerCase().includes('enterprise') || p.category.toLowerCase().includes('internship') || p.techStack.includes('AWS') || p.techStack.includes('Airtable');
         return true;
       });
 
