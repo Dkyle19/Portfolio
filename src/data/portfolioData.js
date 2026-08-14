@@ -5,7 +5,7 @@ export const portfolioData = {
     nickname: "Daryl",
     role: "Full Stack Developer",
     tagline: "Building high-performance web applications, scalable backend systems, and robust database architectures.",
-    bio: "Computer Science graduate with experience as a Full Stack Developer at Urdaneta City University. Proficient in JavaScript, React, PHP, and PostgreSQL, with hands-on experience developing and maintaining scalable web applications, responsive user interfaces, backend systems, and database solutions. Experienced in implementing new features, optimizing system performance, troubleshooting technical issues, and ensuring a seamless user experience. Demonstrates strong problem-solving abilities, adaptability, and effective collaboration within development teams.",
+    bio: "Computer Science graduate with hands-on experience as a Full Stack Developer at Urdaneta City University. Proficient in modern web technologies including JavaScript, React, PHP, and PostgreSQL, with a proven track record of developing and maintaining scalable web applications and responsive user interfaces. Skilled in backend systems, database management, enhancing operational modules (billing, enrollment, and student records), and optimizing overall system performance. Brings strong problem-solving abilities, adaptability, and effective team collaboration skills to fast-paced technical environments.",
     email: "darylkyle17@gmail.com",
     phone: "+63 945-517-3430",
     location: "Urdaneta City, Pangasinan, Philippines",
@@ -227,7 +227,7 @@ export const portfolioData = {
       role: "Full Stack Developer",
       company: "Management Information System (MIS) — Urdaneta City University",
       location: "Urdaneta City, Pangasinan",
-      period: "Jul 2024 – Present",
+      period: "Jan 2026 – Present",
       type: "Full-Time",
       description: "Developed and maintained web-based information systems for the university's administrative and academic operations using JavaScript, React, PHP, and PostgreSQL. Contributed to both front-end and back-end development, ensuring reliable performance, scalability, and a user-friendly experience.",
       achievements: [
