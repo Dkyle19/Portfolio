@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Send, CheckCircle2, MessageSquare, Sparkles, Copy, Check } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle, MessageSquare, Sparkles, Copy, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { portfolioData } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
@@ -16,6 +16,7 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleChange = (e) => {
@@ -23,36 +24,62 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setIsSubmitting(true);
+    setErrorMessage('');
 
-    // Simulate sending delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-
-      // Trigger Confetti Celebration!
-      try {
-        confetti({
-          particleCount: 120,
-          spread: 70,
-          origin: { y: 0.6 }
-        });
-      } catch (err) {
-        console.error('Confetti error:', err);
-      }
-
-      // Reset form fields
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'd34f4e67-e6fb-4adf-afa8-1ab88127d196',
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject ? `[Portfolio] ${formData.subject}` : `[Portfolio] New message from ${formData.name}`,
+          message: formData.message,
+          from_name: 'Portfolio Contact Form'
+        })
       });
-    }, 1000);
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+
+        // Trigger Confetti Celebration!
+        try {
+          confetti({
+            particleCount: 120,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        } catch (err) {
+          console.error('Confetti error:', err);
+        }
+
+        // Reset form fields
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        setErrorMessage(result.message || 'Something went wrong. Please try again or reach out via email directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setErrorMessage('Network error. Please try again or reach out directly to darylkyle17@gmail.com.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCopyEmail = () => {
@@ -194,7 +221,17 @@ export default function Contact() {
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="font-bold block">Thank you! Message Sent.</strong>
-                    <span>I have received your note and will reply promptly to your email.</span>
+                    <span>I have received your message and will reply promptly to your email.</span>
+                  </div>
+                </div>
+              )}
+
+              {errorMessage && (
+                <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-sm flex items-start gap-3 animate-modal">
+                  <AlertCircle className="w-5 h-5 text-rose-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="font-bold block">Submission Notice</strong>
+                    <span>{errorMessage}</span>
                   </div>
                 </div>
               )}
