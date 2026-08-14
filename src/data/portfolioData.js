@@ -148,7 +148,6 @@ export const portfolioData = {
         "AWS",
         "MariaDB",
         "JavaScript",
-        "Blade Engine",
         "Git"
       ],
       highlights: [
@@ -187,8 +186,7 @@ export const portfolioData = {
       { name: "JavaScript (ES6+)", level: "Advanced", icon: "js", experience: "4+ Years", highlight: true },
       { name: "Tailwind CSS", level: "Advanced", icon: "tailwind", experience: "3+ Years", highlight: true },
       { name: "HTML5 & CSS3", level: "Expert", icon: "html", experience: "4+ Years", highlight: true },
-      { name: "Vite & Modern Bundlers", level: "Proficient", icon: "vite", experience: "2+ Years" },
-      { name: "Blade / Blade Engine", level: "Proficient", icon: "blade", experience: "1+ Year" }
+      { name: "Vite & Modern Bundlers", level: "Proficient", icon: "vite", experience: "2+ Years" }
     ],
     backend: [
       { name: "PHP & Laravel", level: "Proficient", icon: "laravel", experience: "2+ Years", highlight: true },
@@ -247,12 +245,12 @@ export const portfolioData = {
       type: "Internship (504 Hours OJT)",
       description: "Completed 504 hours of On-the-Job Training, developing enterprise client-facing web interfaces, property listing pages, and administrative dashboards for a commercial real estate firm.",
       achievements: [
-        "Built dynamic, responsive web interfaces using Laravel Blade templates and Tailwind CSS based on Figma mockups.",
+        "Built dynamic, responsive web interfaces using Laravel and Tailwind CSS based on Figma mockups.",
         "Integrated AWS storage for secure tenant lease contract storage and cloud asset pipelines.",
         "Implemented property search interfaces with unit filtering for North Cambridge and The Courtyards portfolios.",
         "Participated in daily standups, sprint reviews, and code reviews, accelerating ticket resolution."
       ],
-      techUsed: ["Laravel", "Tailwind CSS", "AWS", "MariaDB", "JavaScript", "Blade Engine", "Figma"]
+      techUsed: ["Laravel", "Tailwind CSS", "AWS", "MariaDB", "JavaScript", "Figma"]
     }
   ],
 

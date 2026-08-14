@@ -64,7 +64,7 @@ export const TechLogo = ({ name, className = "w-8 h-8", color }) => {
   }
 
   // Laravel
-  if (norm.includes('laravel') || norm.includes('blade')) {
+  if (norm.includes('laravel')) {
     return (
       <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="24" height="24" rx="5" fill="#FF2D20" fillOpacity="0.15"/>
