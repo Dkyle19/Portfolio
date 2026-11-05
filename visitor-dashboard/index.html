@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Portfolio Visitor Dashboard</title>
+  <style>
+    :root {
+      --bg: #07090e; --panel: #0f1420; --border: rgba(255,255,255,0.08);
+      --text: #e2e8f0; --muted: #94a3b8; --cyan: #22d3ee; --purple: #a78bfa; --green: #34d399;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 60px; }
+    h1 { font-size: 24px; margin: 0; }
+    h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 14px; font-weight: 600; }
+    .sub { color: var(--muted); font-size: 14px; margin-top: 6px; }
+    .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+    .grid { display: grid; gap: 16px; }
+    .cards { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); margin: 24px 0; }
+    .two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-bottom: 16px; }
+    .card .val { font-size: 30px; font-weight: 800; color: #fff; }
+    .card .lbl { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .card.accent .val { color: var(--cyan); }
+    .header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    button { background: #1e293b; color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 9px 14px; font-weight: 600; cursor: pointer; }
+    button:hover { border-color: var(--cyan); }
+    button.primary { background: linear-gradient(90deg, #06b6d4, #4f46e5); border: none; color: #fff; }
+    .chart { display: flex; align-items: flex-end; gap: 4px; height: 160px; padding-top: 10px; }
+    .bar { flex: 1; background: linear-gradient(180deg, var(--cyan), #4f46e5); border-radius: 4px 4px 0 0; min-height: 2px; position: relative; }
+    .bar:hover::after { content: attr(data-tip); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #000; padding: 4px 8px; border-radius: 6px; font-size: 11px; white-space: nowrap; margin-bottom: 4px; }
+    .axis { display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; margin-top: 6px; }
+    .row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .row:last-child { border-bottom: none; }
+    .meter { height: 6px; background: #1e293b; border-radius: 3px; margin-top: 4px; overflow: hidden; }
+    .meter > div { height: 100%; background: var(--purple); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; background: rgba(34,211,238,.1); color: var(--cyan); font-size: 12px; }
+    .login { max-width: 380px; margin: 15vh auto; text-align: center; }
+    .login input { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: #0b0f19; color: #fff; margin: 16px 0 12px; font-size: 15px; }
+    .err { color: #f87171; font-size: 13px; min-height: 18px; }
+    .note { background: rgba(34,211,238,.06); border: 1px solid rgba(34,211,238,.2); border-radius: 12px; padding: 14px 16px; font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+    .note a { color: var(--cyan); }
+    .scroll { max-height: 420px; overflow: auto; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <!-- Login -->
+  <div id="login" class="login panel">
+    <h1>Visitor Dashboard</h1>
+    <p class="sub">Daryl Kyle S. Bristol — Portfolio</p>
+    <input id="pw" type="password" placeholder="Dashboard password" autocomplete="current-password" />
+    <div class="err" id="loginErr"></div>
+    <button class="primary" style="width:100%" onclick="login()">Sign in</button>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="app" class="wrap hidden">
+    <div class="header">
+      <div>
+        <h1>Portfolio Visitor Dashboard</h1>
+        <div class="sub">Interaction tracking for <span id="siteLabel"></span> • updated <span id="updated">—</span></div>
+      </div>
+      <div style="display:flex; gap:8px">
+        <button onclick="load()">Refresh</button>
+        <button onclick="logout()">Sign out</button>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:20px">
+      📊 For page views, unique visitors, countries and traffic sources, open
+      <a href="https://vercel.com/dashboard" target="_blank" rel="noopener">Vercel → your portfolio project → Analytics</a>.
+      This dashboard tracks the actions that matter most: resume/CV downloads, contact messages and profile clicks.
+    </div>
+
+    <div class="grid cards" id="cards"></div>
+
+    <div class="panel" style="margin-bottom:16px">
+      <h2>Interactions — last 30 days</h2>
+      <div class="chart" id="chart"></div>
+      <div class="axis"><span id="axisStart"></span><span id="axisEnd"></span></div>
+    </div>
+
+    <div class="grid two">
+      <div class="panel"><h2>Countries</h2><div id="countries"></div></div>
+      <div class="panel"><h2>Traffic sources</h2><div id="referrers"></div></div>
+      <div class="panel"><h2>Devices</h2><div id="devices"></div></div>
+      <div class="panel"><h2>Browsers</h2><div id="browsers"></div></div>
+    </div>
+
+    <div class="panel">
+      <h2>Recent activity</h2>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>When</th><th>Action</th><th>Country</th><th>Device</th><th>Source</th></tr></thead>
+          <tbody id="recent"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ⚙️ Your portfolio URL (where /api/stats lives)
+    const API_BASE = 'https://darylbristol.vercel.app';
+
+    const LABELS = {
+      resume_download: 'Resume downloads',
+      resume_open: 'Resume opened in tab',
+      cv_download: 'CV downloads',
+      cv_open: 'CV opened in tab',
+      resume_modal_open: 'Resume viewer opened',
+      contact_submit: 'Contact messages',
+      email_click: 'Email link clicks',
+      email_copy: 'Email copied',
+      phone_copy: 'Phone copied',
+      github_click: 'GitHub clicks',
+      linkedin_click: 'LinkedIn clicks',
+    };
+    const HIGHLIGHT = ['resume_download', 'cv_download', 'contact_submit', 'resume_modal_open', 'linkedin_click', 'github_click'];
+
+    document.getElementById('siteLabel').textContent = API_BASE.replace(/^https?:\/\//, '');
+    const $ = (id) => document.getElementById(id);
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    let token = sessionStorage.getItem('dash_pw') || '';
+
+    function login() {
+      token = $('pw').value.trim();
+      if (!token) return;
+      load(true);
+    }
+    $('pw').addEventListener('keydown', (e) => e.key === 'Enter' && login());
+
+    function logout() {
+      sessionStorage.removeItem('dash_pw');
+      token = '';
+      $('app').classList.add('hidden');
+      $('login').classList.remove('hidden');
+    }
+
+    async function load(fromLogin = false) {
+      $('loginErr').textContent = '';
+      try {
+        const res = await fetch(`${API_BASE}/api/stats`, { headers: { Authorization: `Bearer ${token}` } });
+        if (res.status === 401) throw new Error('Wrong password');
+        if (!res.ok) throw new Error('Could not load stats (' + res.status + ')');
+        const data = await res.json();
+        sessionStorage.setItem('dash_pw', token);
+        $('login').classList.add('hidden');
+        $('app').classList.remove('hidden');
+        render(data);
+      } catch (err) {
+        const onLoginScreen = $('app').classList.contains('hidden');
+        if (err.message === 'Wrong password') {
+          logout();
+          $('loginErr').textContent = err.message;
+        } else if (onLoginScreen) {
+          $('loginErr').textContent = err.message;
+        } else {
+          alert(err.message);
+        }
+      }
+    }
+
+    function countBy(list, key) {
+      const m = {};
+      list.forEach((r) => { const k = r[key] || 'Unknown'; m[k] = (m[k] || 0) + 1; });
+      return Object.entries(m).sort((a, b) => b[1] - a[1]);
+    }
+
+    function renderList(el, entries) {
+      if (!entries.length) { el.innerHTML = '<div class="sub">No data yet</div>'; return; }
+      const max = entries[0][1];
+      el.innerHTML = entries.slice(0, 8).map(([k, v]) => `
+        <div class="row" style="display:block">
+          <div style="display:flex;justify-content:space-between"><span>${esc(k)}</span><b>${v}</b></div>
+          <div class="meter"><div style="width:${(v / max) * 100}%"></div></div>
+        </div>`).join('');
+    }
+
+    function countryName(code) {
+      try { return code && code !== 'Unknown' ? new Intl.DisplayNames(['en'], { type: 'region' }).of(code) : 'Unknown'; }
+      catch { return code; }
+    }
+
+    function render({ totals, daily, recent }) {
+      $('updated').textContent = new Date().toLocaleTimeString();
+
+      // Summary cards
+      const all = Object.values(totals).reduce((a, b) => a + Number(b), 0);
+      $('cards').innerHTML =
+        `<div class="panel card accent"><div class="val">${all}</div><div class="lbl">Total interactions</div></div>` +
+        HIGHLIGHT.map((k) => `<div class="panel card"><div class="val">${Number(totals[k] || 0)}</div><div class="lbl">${LABELS[k]}</div></div>`).join('');
+
+      // 30-day chart
+      const sums = daily.map((d) => Object.values(d.counts).reduce((a, b) => a + Number(b), 0));
+      const max = Math.max(1, ...sums);
+      $('chart').innerHTML = daily.map((d, i) => `<div class="bar" style="height:${(sums[i] / max) * 100}%" data-tip="${d.date}: ${sums[i]}"></div>`).join('');
+      $('axisStart').textContent = daily[0]?.date || '';
+      $('axisEnd').textContent = daily[daily.length - 1]?.date || '';
+
+      // Breakdowns (based on recent activity)
+      renderList($('countries'), countBy(recent, 'country').map(([k, v]) => [countryName(k), v]));
+      renderList($('referrers'), countBy(recent, 'referrer'));
+      renderList($('devices'), countBy(recent, 'device'));
+      renderList($('browsers'), countBy(recent, 'browser'));
+
+      // Recent table
+      $('recent').innerHTML = recent.length
+        ? recent.slice(0, 100).map((r) => `
+          <tr>
+            <td>${new Date(r.ts).toLocaleString()}</td>
+            <td><span class="pill">${esc(LABELS[r.event] || r.event)}</span></td>
+            <td>${esc(countryName(r.country))}</td>
+            <td>${esc(r.device)}</td>
+            <td>${esc(r.referrer)}</td>
+          </tr>`).join('')
+        : '<tr><td colspan="5" class="sub">No activity yet — share your portfolio link!</td></tr>';
+    }
+
+    if (token) load();
+  </script>
+</body>
+</html>

@@ -53,7 +53,7 @@ export default function Footer() {
           {/* Social Links & Back To Top */}
           <div className="md:col-span-6 flex flex-wrap items-center justify-start md:justify-end gap-3">
             <a
-              href={personal.github}
+              href={personal.github} data-track="github_click"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-xl bg-white/5 hover:bg-cyan-500/10 text-slate-300 hover:text-cyan-300 border border-white/10 hover:border-cyan-500/30 transition-all duration-200 shadow-sm"
@@ -63,7 +63,7 @@ export default function Footer() {
             </a>
 
             <a
-              href={personal.linkedin}
+              href={personal.linkedin} data-track="linkedin_click"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-xl bg-white/5 hover:bg-cyan-500/10 text-slate-300 hover:text-cyan-300 border border-white/10 hover:border-cyan-500/30 transition-all duration-200 shadow-sm"
@@ -73,7 +73,7 @@ export default function Footer() {
             </a>
 
             <a
-              href={`mailto:${personal.email}`}
+              href={`mailto:${personal.email}`} data-track="email_click"
               className="p-2.5 rounded-xl bg-white/5 hover:bg-cyan-500/10 text-slate-300 hover:text-cyan-300 border border-white/10 hover:border-cyan-500/30 transition-all duration-200 shadow-sm"
               aria-label="Email Me"
             >

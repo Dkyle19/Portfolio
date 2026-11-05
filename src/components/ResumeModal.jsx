@@ -81,6 +81,7 @@ export default function ResumeModal({ onClose }) {
           <div className="flex items-center gap-2">
             <a
               id="download-cv-quick-btn"
+              data-track="cv_download"
               href={personal.cvPath}
               download="Daryl_Kyle_Bristol_CV.pdf"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-cyan-600 hover:bg-cyan-500 transition-colors shadow-sm"
@@ -90,6 +91,7 @@ export default function ResumeModal({ onClose }) {
             </a>
             <a
               id="download-resume-quick-btn"
+              data-track="resume_download"
               href={personal.resumePath}
               download="Daryl_Kyle_Bristol_Resume.pdf"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-white/10 transition-colors"
@@ -225,6 +227,7 @@ export default function ResumeModal({ onClose }) {
                 <div className="flex flex-col gap-2 w-full pt-2">
                   <a
                     id="download-cv-full-card-btn"
+                    data-track="cv_download"
                     href={personal.cvPath}
                     download="Daryl_Kyle_Bristol_CV.pdf"
                     className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 transition-all shadow-md shadow-cyan-500/25"
@@ -234,6 +237,7 @@ export default function ResumeModal({ onClose }) {
                   </a>
                   <a
                     href={personal.cvPath}
+                    data-track="cv_open"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-xs text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 transition-colors"
@@ -264,6 +268,7 @@ export default function ResumeModal({ onClose }) {
                 <div className="flex flex-col gap-2 w-full pt-2">
                   <a
                     id="download-resume-full-card-btn"
+                    data-track="resume_download"
                     href={personal.resumePath}
                     download="Daryl_Kyle_Bristol_Resume.pdf"
                     className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 transition-all shadow-md shadow-purple-500/25"
@@ -273,6 +278,7 @@ export default function ResumeModal({ onClose }) {
                   </a>
                   <a
                     href={personal.resumePath}
+                    data-track="resume_open"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 transition-colors"

@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle, MessageSquare, Sp
 import confetti from 'canvas-confetti';
 import { portfolioData } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { trackEvent } from '../lib/track';
 
 export default function Contact() {
   const { personal } = portfolioData;
@@ -59,6 +60,7 @@ export default function Contact() {
 
       if (result.success) {
         setIsSubmitted(true);
+        trackEvent('contact_submit');
 
         // Trigger Confetti Celebration!
         try {
@@ -141,13 +143,13 @@ export default function Contact() {
                     </div>
                     <div>
                       <span className="text-[11px] font-mono text-slate-400 uppercase">Email</span>
-                      <a href={`mailto:${personal.email}`} className="block text-xs sm:text-sm font-semibold text-white hover:text-cyan-300 transition-colors">
+                      <a href={`mailto:${personal.email}`} data-track="email_click" className="block text-xs sm:text-sm font-semibold text-white hover:text-cyan-300 transition-colors">
                         {personal.email}
                       </a>
                     </div>
                   </div>
                   <button
-                    onClick={handleCopyEmail}
+                    onClick={handleCopyEmail} data-track="email_copy"
                     className="p-2 rounded-lg text-slate-400 hover:text-cyan-300 hover:bg-white/5 transition-colors"
                     title="Copy Email"
                   >
@@ -169,7 +171,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <button
-                    onClick={handleCopyPhone}
+                    onClick={handleCopyPhone} data-track="phone_copy"
                     className="p-2 rounded-lg text-slate-400 hover:text-purple-300 hover:bg-white/5 transition-colors"
                     title="Copy Phone Number"
                   >
@@ -204,7 +206,7 @@ export default function Contact() {
                 </span>
                 <div className="flex items-center gap-3">
                   <a
-                    href={personal.github}
+                    href={personal.github} data-track="github_click"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-200 hover:text-white hover:border-cyan-400 transition-all text-xs font-semibold"
@@ -214,7 +216,7 @@ export default function Contact() {
                   </a>
 
                   <a
-                    href={personal.linkedin}
+                    href={personal.linkedin} data-track="linkedin_click"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-200 hover:text-white hover:border-purple-400 transition-all text-xs font-semibold"

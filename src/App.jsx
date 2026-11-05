@@ -10,9 +10,15 @@ import Certifications from './components/Certifications';
 import ResumeModal from './components/ResumeModal';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { trackEvent } from './lib/track';
 
 export default function App() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+
+  const openResumeModal = () => {
+    setIsResumeModalOpen(true);
+    trackEvent('resume_modal_open');
+  };
 
   return (
     <div className="min-h-screen bg-[#07090e] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200 relative overflow-x-hidden font-sans">
@@ -34,11 +40,11 @@ export default function App() {
       {/* Relative container for content layers */}
       <div className="relative z-10">
         {/* Sticky Navigation Bar */}
-        <Navbar onOpenResumeModal={() => setIsResumeModalOpen(true)} />
+        <Navbar onOpenResumeModal={openResumeModal} />
 
         {/* Main Content Sections */}
         <main>
-          <Hero onOpenResumeModal={() => setIsResumeModalOpen(true)} />
+          <Hero onOpenResumeModal={openResumeModal} />
           <About />
           <Projects />
           <Skills />
