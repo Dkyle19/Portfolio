@@ -36,7 +36,7 @@ export default function Hero({ onOpenResumeModal }) {
                 <span className="text-gradient">Daryl Kyle S. Bristol</span>
               </h1>
               <p className="text-xl sm:text-2xl font-semibold text-cyan-400/90 font-mono">
-                Full-Stack Developer
+                Web Developer | Front End Developer | Back End Developer | Technical Support
               </p>
             </div>
 
@@ -50,6 +50,10 @@ export default function Hero({ onOpenResumeModal }) {
               <div className="flex items-center gap-1.5 bg-slate-900/60 px-3 py-1.5 rounded-md border border-white/5">
                 <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Urdaneta City, Pangasinan, PH</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-slate-900/60 px-3 py-1.5 rounded-md border border-white/5">
+                <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Pasay City, Metro Manila, PH</span>
               </div>
               <div className="flex items-center gap-1.5 bg-slate-900/60 px-3 py-1.5 rounded-md border border-white/5">
                 <Code2 className="w-3.5 h-3.5 text-purple-400" />

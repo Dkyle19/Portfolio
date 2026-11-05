@@ -16,7 +16,7 @@ export default function About() {
     },
     {
       icon: Cpu,
-      title: "Robust Full-Stack Backends",
+      title: "Full-Stack Backends",
       description: "Architecting secure RESTful APIs, data validation layers, and role-based access systems using C# / .NET Core, Laravel (PHP), and Kotlin.",
       color: "from-purple-500/20 to-indigo-500/10",
       borderColor: "group-hover:border-purple-500/40",
@@ -66,11 +66,11 @@ export default function About() {
           <div className="lg:col-span-7 glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 space-y-4">
             <h3 className="text-xl font-bold text-white flex items-center gap-2">
               <User className="w-5 h-5 text-cyan-400" />
-              <span>Full-Stack Software Engineer</span>
+              <span>Part-Time IT Support</span>
             </h3>
             
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              I am a Bachelor of Science in Computer Science graduate ('25) from PHINMA UPANG College Urdaneta with <strong className="text-cyan-300 font-semibold">7 months of professional experience</strong> as a Full-Stack Developer at <strong className="text-white font-semibold">Urdaneta City University (UCU) MIS</strong>. Throughout my career and academic engagements, I have focused on building reliable administrative portals, scalable backend architectures, and human-centered user interfaces.
+              I am a Bachelor of Science in Computer Science graduate ('25) from PHINMA UPANG College Urdaneta, currently working as a <strong className="text-cyan-300 font-semibold">Part-Time IT Support</strong>. I help users troubleshoot hardware and software issues, set up and maintain computers, printers, and network connections, install and configure applications, and keep day-to-day systems running smoothly. I bring a strong technical foundation from <strong className="text-white font-semibold">7 months of professional experience</strong> as a Full-Stack Developer at <strong className="text-white font-semibold">Urdaneta City University (UCU) MIS</strong>, which allows me to diagnose problems quickly and communicate solutions clearly.
             </p>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -104,6 +104,10 @@ export default function About() {
                 <div className="flex justify-between py-2 border-b border-white/5">
                   <span className="text-slate-400">Location</span>
                   <span className="font-medium text-white text-right">Pangasinan, Philippines</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-white/5">
+                  <span className="text-slate-400">Current Residence</span>
+                  <span className="font-medium text-white text-right">Pasay City, Metro Manila</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/5">
                   <span className="text-slate-400">Education</span>

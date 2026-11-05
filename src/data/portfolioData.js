@@ -9,6 +9,7 @@ export const portfolioData = {
     email: "darylkyle17@gmail.com",
     phone: "+63 945-517-3430",
     location: "Urdaneta City, Pangasinan, Philippines",
+    secondaryLocation: "Pasay City, Metro Manila, Philippines",
     availability: "Available for Full-time, Contract & Remote Roles",
     github: "https://github.com/Dkyle19",
     linkedin: "https://www.linkedin.com/in/daryl-kyle-bristol-707b62270",

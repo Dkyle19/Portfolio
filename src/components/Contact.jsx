@@ -187,6 +187,11 @@ export default function Contact() {
                     <span className="block text-xs sm:text-sm font-semibold text-white">
                       {personal.location}
                     </span>
+                    {personal.secondaryLocation && (
+                      <span className="block text-xs sm:text-sm font-semibold text-white">
+                        {personal.secondaryLocation} <span className="text-[11px] font-normal text-slate-400">(Current)</span>
+                      </span>
+                    )}
                   </div>
                 </div>
 
