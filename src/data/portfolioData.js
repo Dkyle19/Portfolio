@@ -223,7 +223,7 @@ export const portfolioData = {
   experience: [
     {
       id: "ucu-mis",
-      role: "Full Stack Developer",
+      role: "Full Stack Developer | IT Support",
       company: "Management Information System (MIS) — Urdaneta City University",
       location: "Urdaneta City, Pangasinan",
       period: "7 Months Experience",
