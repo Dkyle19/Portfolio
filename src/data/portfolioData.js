@@ -227,7 +227,7 @@ export const portfolioData = {
       company: "Management Information System (MIS) — Urdaneta City University",
       location: "Urdaneta City, Pangasinan",
       period: "7 Months Experience",
-      type: "Full-Time",
+      type: "Part-Time",
       description: "7 months of hands-on experience developing and maintaining mission-critical web-based information systems for university administrative and academic operations using JavaScript, React, PHP, and PostgreSQL. Contributed to both front-end and back-end development, ensuring high reliability, data integrity, and optimal performance.",
       achievements: [
         "Designed and implemented responsive user interfaces using React and modern web technologies.",
