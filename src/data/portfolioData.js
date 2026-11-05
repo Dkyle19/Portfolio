@@ -20,7 +20,7 @@ export const portfolioData = {
 
   stats: [
     { label: "Degree & Major", value: "BSCS '25", sublabel: "PHINMA UPang Graduate" },
-    { label: "Work Experience", value: "7 Months", sublabel: "Full-Stack Dev @ UCU" },
+    { label: "Work Experience", value: "7 Months", sublabel: "Full Stack Developer | IT Support" },
     { label: "Systems Built", value: "3+", sublabel: "Full-Stack Web & Mobile" },
     { label: "Verified Credentials", value: "4+", sublabel: "Cisco & Industry Certs" }
   ],
