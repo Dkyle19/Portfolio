@@ -70,7 +70,7 @@ export default function About() {
             </h3>
             
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              I am a Bachelor of Science in Computer Science graduate ('25) from PHINMA UPANG College Urdaneta, currently working as a <strong className="text-cyan-300 font-semibold">Part-Time IT Support</strong>. I help users troubleshoot hardware and software issues, set up and maintain computers, printers, and network connections, install and configure applications, and keep day-to-day systems running smoothly. I bring a strong technical foundation from <strong className="text-white font-semibold">7 months of part-time freelance work</strong> as a Full-Stack Developer, which allows me to diagnose problems quickly and communicate solutions clearly.
+              I am a Bachelor of Science in Computer Science graduate ('25) from PHINMA UPANG College Urdaneta, with <strong className="text-cyan-300 font-semibold">7 months of experience</strong> as a <strong className="text-cyan-300 font-semibold">Part-Time IT Support</strong>. I help users troubleshoot hardware and software issues, set up and maintain computers, printers, and network connections, install and configure applications, and keep day-to-day systems running smoothly. I bring a strong technical foundation from <strong className="text-white font-semibold">part-time freelance work</strong> as a Full-Stack Developer, which allows me to diagnose problems quickly and communicate solutions clearly.
             </p>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
