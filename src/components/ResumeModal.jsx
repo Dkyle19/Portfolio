@@ -32,7 +32,7 @@ export default function ResumeModal({ onClose }) {
             </div>
             <div>
               <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                Curriculum Vitae & Resume Hub
+                Resume Hub
               </h3>
               <p className="text-xs text-slate-400">
                 {personal.name} • {personal.role}
@@ -73,28 +73,18 @@ export default function ResumeModal({ onClose }) {
                   : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
               }`}
             >
-              Download PDF Files
+              Download Resume
             </button>
           </div>
 
           {/* Quick PDF Triggers */}
           <div className="flex items-center gap-2">
             <a
-              id="download-cv-quick-btn"
-              data-track="cv_download"
-              href={personal.cvPath}
-              download="Daryl_Kyle_Bristol_CV.pdf"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-cyan-600 hover:bg-cyan-500 transition-colors shadow-sm"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>Get Full CV</span>
-            </a>
-            <a
               id="download-resume-quick-btn"
               data-track="resume_download"
               href={personal.resumePath}
               download="Daryl_Kyle_Bristol_Resume.pdf"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-white/10 transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-cyan-600 hover:bg-cyan-500 transition-colors shadow-sm"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Get Resume</span>
@@ -205,73 +195,31 @@ export default function ResumeModal({ onClose }) {
             </div>
           ) : (
             /* Download Tab */
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-4">
-              
-              {/* Full CV Card */}
-              <div className="glass-panel p-6 rounded-2xl border border-white/10 flex flex-col justify-between items-center text-center space-y-4 hover:border-cyan-500/40 transition-colors">
-                <div className="p-4 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
-                  <FileText className="w-10 h-10" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-white">Full Curriculum Vitae (CV)</h4>
-                  <p className="text-xs text-slate-400 mt-1">
-                    Comprehensive multi-page academic & professional dossier detailing all coursework, thesis platforms, and employment history.
-                  </p>
-                  <div className="flex items-center justify-center gap-2 mt-3 text-xs font-mono text-cyan-300">
-                    <span>PDF Format</span>
-                    <span>•</span>
-                    <span>Full Detail</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2 w-full pt-2">
-                  <a
-                    id="download-cv-full-card-btn"
-                    data-track="cv_download"
-                    href={personal.cvPath}
-                    download="Daryl_Kyle_Bristol_CV.pdf"
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 transition-all shadow-md shadow-cyan-500/25"
-                  >
-                    <Download className="w-4 h-4" />
-                    <span>Download CV.pdf</span>
-                  </a>
-                  <a
-                    href={personal.cvPath}
-                    data-track="cv_open"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-xs text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 transition-colors"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    <span>Open in Browser Tab</span>
-                  </a>
-                </div>
-              </div>
-
+            <div className="max-w-md mx-auto py-4">
               {/* Resume Card */}
-              <div className="glass-panel p-6 rounded-2xl border border-white/10 flex flex-col justify-between items-center text-center space-y-4 hover:border-purple-500/40 transition-colors">
-                <div className="p-4 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
+              <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 flex flex-col justify-between items-center text-center space-y-4 hover:border-cyan-500/40 transition-colors shadow-xl">
+                <div className="p-4 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
                   <FolderDown className="w-10 h-10" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white">Resume</h4>
+                  <h4 className="text-lg font-bold text-white">Official Resume</h4>
                   <p className="text-xs text-slate-400 mt-1">
-                    Professional resume highlighting core technical skills, full-stack software development experience, and key projects.
+                    Professional resume highlighting core technical skills, software development experience, and key projects.
                   </p>
-                  <div className="flex items-center justify-center gap-2 mt-3 text-xs font-mono text-purple-300">
+                  <div className="flex items-center justify-center gap-2 mt-3 text-xs font-mono text-cyan-300">
                     <span>PDF Format</span>
                     <span>•</span>
                     <span>Official Document</span>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-2 w-full pt-2">
+                <div className="flex flex-col gap-2.5 w-full pt-2">
                   <a
                     id="download-resume-full-card-btn"
                     data-track="resume_download"
                     href={personal.resumePath}
                     download="Daryl_Kyle_Bristol_Resume.pdf"
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 transition-all shadow-md shadow-purple-500/25"
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 transition-all shadow-md shadow-cyan-500/25"
                   >
                     <Download className="w-4 h-4" />
                     <span>Download Resume.pdf</span>
@@ -281,14 +229,13 @@ export default function ResumeModal({ onClose }) {
                     data-track="resume_open"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 transition-colors"
+                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-xs text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 transition-colors"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                     <span>Open in Browser Tab</span>
                   </a>
                 </div>
               </div>
-
             </div>
           )}
         </div>

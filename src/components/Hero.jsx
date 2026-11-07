@@ -78,7 +78,7 @@ export default function Hero({ onOpenResumeModal }) {
                 className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-cyan-300 bg-slate-900/80 hover:bg-slate-800 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 backdrop-blur-md hover:-translate-y-0.5 w-full sm:w-auto text-center"
               >
                 <FileText className="w-4 h-4" />
-                <span>View Resume & CV</span>
+                <span>View Resume</span>
               </button>
 
               <a

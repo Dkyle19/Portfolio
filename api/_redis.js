@@ -22,3 +22,4 @@ export const ALLOWED_EVENTS = [
 ];
 
 export const MAX_RECENT = 500;
+

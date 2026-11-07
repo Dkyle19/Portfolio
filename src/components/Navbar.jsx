@@ -84,7 +84,7 @@ export default function Navbar({ onOpenResumeModal }) {
               className="flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-cyan-300 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400 rounded-lg transition-all duration-300 shadow-sm hover:shadow-cyan-500/20"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span>Resume / CV</span>
+              <span>Resume</span>
             </button>
 
             <a
@@ -105,7 +105,7 @@ export default function Navbar({ onOpenResumeModal }) {
               className="p-2 text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 rounded-lg text-xs flex items-center gap-1 font-medium"
             >
               <FileText className="w-4 h-4" />
-              <span>CV</span>
+              <span>Resume</span>
             </button>
 
             <button
@@ -143,7 +143,7 @@ export default function Navbar({ onOpenResumeModal }) {
                 className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 rounded-lg"
               >
                 <FileText className="w-4 h-4" />
-                <span>View Full Resume & CV</span>
+                <span>View Full Resume</span>
               </button>
               <a
                 href="#contact"

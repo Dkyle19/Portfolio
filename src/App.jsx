@@ -58,7 +58,7 @@ export default function App() {
         <Footer />
       </div>
 
-      {/* Global Interactive Resume & CV Hub Modal */}
+      {/* Global Interactive Resume Hub Modal */}
       {isResumeModalOpen && (
         <ResumeModal onClose={() => setIsResumeModalOpen(false)} />
       )}
