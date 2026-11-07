@@ -20,7 +20,7 @@ export default function Experience() {
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-full mt-3"></div>
           <p className="text-slate-400 max-w-2xl text-sm sm:text-base mt-4">
-            Hands-on professional engineering experience across university information systems and commercial property management platforms.
+            Hands-on engineering experience across freelance web projects and commercial property management platforms.
           </p>
         </div>
 

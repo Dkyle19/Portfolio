@@ -70,11 +70,11 @@ export default function About() {
             </h3>
             
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              I am a Bachelor of Science in Computer Science graduate ('25) from PHINMA UPANG College Urdaneta, currently working as a <strong className="text-cyan-300 font-semibold">Part-Time IT Support</strong>. I help users troubleshoot hardware and software issues, set up and maintain computers, printers, and network connections, install and configure applications, and keep day-to-day systems running smoothly. I bring a strong technical foundation from <strong className="text-white font-semibold">7 months of professional experience</strong> as a Full-Stack Developer at <strong className="text-white font-semibold">Urdaneta City University (UCU) MIS</strong>, which allows me to diagnose problems quickly and communicate solutions clearly.
+              I am a Bachelor of Science in Computer Science graduate ('25) from PHINMA UPANG College Urdaneta, currently working as a <strong className="text-cyan-300 font-semibold">Part-Time IT Support</strong>. I help users troubleshoot hardware and software issues, set up and maintain computers, printers, and network connections, install and configure applications, and keep day-to-day systems running smoothly. I bring a strong technical foundation from <strong className="text-white font-semibold">7 months of part-time freelance work</strong> as a Full-Stack Developer, which allows me to diagnose problems quickly and communicate solutions clearly.
             </p>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              In addition to developing university-wide enrollment, billing, and student record modules, I completed an enterprise internship at <strong className="text-white font-semibold">Cura Property Management Corp.</strong> and engineered two major capstone systems: <strong className="text-cyan-300 font-semibold">Leo PropertEase</strong> (Property Leasing Platform) and <strong className="text-purple-300 font-semibold">Barangay eConn</strong> (Emergency Dispatch Mobile System).
+              In addition to my freelance work building record-keeping, billing, and management modules, I completed an enterprise internship at <strong className="text-white font-semibold">Cura Property Management Corp.</strong> and engineered two major capstone systems: <strong className="text-cyan-300 font-semibold">Leo PropertEase</strong> (Property Leasing Platform) and <strong className="text-purple-300 font-semibold">Barangay eConn</strong> (Emergency Dispatch Mobile System).
             </p>
 
             <div className="pt-4 border-t border-white/10 flex flex-wrap gap-3">

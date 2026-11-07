@@ -5,7 +5,7 @@ export const portfolioData = {
     nickname: "Daryl",
     role: "Full Stack Developer",
     tagline: "Building high-performance web applications, scalable backend systems, and robust database architectures.",
-    bio: "Computer Science graduate with 7 months of professional experience as a Full Stack Developer at Urdaneta City University (UCU) MIS. Proficient in modern web technologies including JavaScript, React, PHP, and PostgreSQL, with a proven track record of developing and maintaining scalable web applications and responsive user interfaces. Skilled in backend systems, database management, enhancing operational modules (billing, enrollment, and student records), and optimizing overall system performance. Brings strong problem-solving abilities, adaptability, and effective team collaboration skills to fast-paced technical environments.",
+    bio: "Computer Science graduate with 7 months of part-time freelance experience as a Full Stack Developer and IT Support. Proficient in modern web technologies including JavaScript, React, PHP, and PostgreSQL, with a track record of developing and maintaining web applications and responsive user interfaces. Skilled in backend systems, database management, building record-keeping and billing modules, and optimizing overall system performance. Brings strong problem-solving abilities, adaptability, and effective collaboration skills to fast-paced technical environments.",
     email: "darylkyle17@gmail.com",
     phone: "+63 945-517-3430",
     location: "Urdaneta City, Pangasinan, Philippines",
@@ -20,7 +20,7 @@ export const portfolioData = {
 
   stats: [
     { label: "Degree & Major", value: "BSCS '25", sublabel: "PHINMA UPang Graduate" },
-    { label: "Work Experience", value: "7 Months", sublabel: "Full Stack Developer | IT Support" },
+    { label: "Work Experience", value: "7 Months", sublabel: "Freelance, Part-Time" },
     { label: "Systems Built", value: "3+", sublabel: "Full-Stack Web & Mobile" },
     { label: "Verified Credentials", value: "4+", sublabel: "Cisco & Industry Certs" }
   ],
@@ -222,17 +222,17 @@ export const portfolioData = {
 
   experience: [
     {
-      id: "ucu-mis",
-      role: "Full Stack Developer | IT Support",
-      company: "Management Information System (MIS) — Urdaneta City University",
-      location: "Urdaneta City, Pangasinan",
+      id: "freelance-dev",
+      role: "Freelance Full Stack Developer | IT Support",
+      company: "Freelance (Self-Employed)",
+      location: "Philippines",
       period: "7 Months Experience",
-      type: "Part-Time",
-      description: "7 months of hands-on experience developing and maintaining mission-critical web-based information systems for university administrative and academic operations using JavaScript, React, PHP, and PostgreSQL. Contributed to both front-end and back-end development, ensuring high reliability, data integrity, and optimal performance.",
+      type: "Part-Time Freelance",
+      description: "7 months of hands-on freelance experience building and maintaining web-based systems for clients using JavaScript, React, PHP, and PostgreSQL, alongside providing IT support. Worked on both front-end and back-end development, focusing on reliability, data integrity, and solid performance.",
       achievements: [
         "Designed and implemented responsive user interfaces using React and modern web technologies.",
         "Developed and maintained backend functionalities and database structures using PHP and PostgreSQL.",
-        "Built and enhanced modules for student records, billing, enrollment, and university management processes.",
+        "Built and enhanced record-keeping, billing, and management modules for client projects.",
         "Optimized system performance, improved application security, and resolved technical issues."
       ],
       techUsed: ["JavaScript", "React", "PHP", "PostgreSQL", "HTML/CSS", "Git", "REST APIs"]

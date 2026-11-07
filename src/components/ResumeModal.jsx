@@ -101,7 +101,7 @@ export default function ResumeModal({ onClose }) {
               <div className="p-5 rounded-xl bg-slate-900/60 border border-white/10 space-y-2">
                 <h4 className="text-xs font-bold text-cyan-400 uppercase tracking-widest font-mono flex items-center gap-2">
                   <User className="w-4 h-4" />
-                  Professional Profile
+                  Profile
                 </h4>
                 <p className="text-sm text-slate-200 leading-relaxed">
                   {personal.bio}
@@ -204,7 +204,7 @@ export default function ResumeModal({ onClose }) {
                 <div>
                   <h4 className="text-lg font-bold text-white">Official Resume</h4>
                   <p className="text-xs text-slate-400 mt-1">
-                    Professional resume highlighting core technical skills, software development experience, and key projects.
+                    Resume highlighting core technical skills, software development experience, and key projects.
                   </p>
                   <div className="flex items-center justify-center gap-2 mt-3 text-xs font-mono text-cyan-300">
                     <span>PDF Format</span>
