@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, FileText, Send, Code2, Sparkles } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar({ onOpenResumeModal }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,6 +19,7 @@ export default function Navbar({ onOpenResumeModal }) {
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
+    { name: 'IT Support', href: '#it-support' },
     { name: 'Experience', href: '#experience' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
@@ -64,7 +66,7 @@ export default function Navbar({ onOpenResumeModal }) {
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-1 bg-slate-900/70 p-1.5 rounded-full border border-cyan-500/20 backdrop-blur-md shadow-inner shadow-cyan-500/5">
+          <div className="hidden lg:flex items-center gap-1 bg-slate-900/70 p-1.5 rounded-full border border-cyan-500/20 backdrop-blur-md shadow-inner shadow-cyan-500/5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -77,7 +79,8 @@ export default function Navbar({ onOpenResumeModal }) {
           </div>
 
           {/* Action CTAs */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
             <button
               id="navbar-resume-btn"
               onClick={onOpenResumeModal}
@@ -98,7 +101,8 @@ export default function Navbar({ onOpenResumeModal }) {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle />
             <button
               id="mobile-resume-quick-btn"
               onClick={onOpenResumeModal}
@@ -122,7 +126,7 @@ export default function Navbar({ onOpenResumeModal }) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#07090e]/95 backdrop-blur-2xl border-b border-cyan-500/20 px-4 pt-3 pb-6 animate-modal">
+        <div className="lg:hidden bg-[#07090e]/95 backdrop-blur-2xl border-b border-cyan-500/20 px-4 pt-3 pb-6 animate-modal">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a

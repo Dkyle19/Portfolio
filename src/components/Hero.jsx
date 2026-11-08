@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, FileText, Sparkles, CheckCircle2, Terminal, Code2, Database, ShieldCheck, MapPin } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import TypingText from './TypingText';
 
 export default function Hero({ onOpenResumeModal }) {
   const { personal, stats } = portfolioData;
@@ -24,9 +25,9 @@ export default function Hero({ onOpenResumeModal }) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span className="text-cyan-300 font-semibold">Available for Opportunities</span>
+              <span className="text-cyan-300 font-semibold">Open to Part-Time &amp; Entry-Level Roles</span>
               <span className="text-slate-500">•</span>
-              <span className="text-slate-400">CS Graduate '25</span>
+              <span className="text-slate-400">Pasay City or Remote</span>
             </div>
 
             {/* Main Headline */}
@@ -35,8 +36,11 @@ export default function Hero({ onOpenResumeModal }) {
                 Hi, I'm <br className="hidden sm:block" />
                 <span className="text-gradient">Daryl Kyle S. Bristol</span>
               </h1>
-              <p className="text-xl sm:text-2xl font-semibold text-cyan-400/90 font-mono">
-                Web Developer | Front End Developer | Back End Developer | Technical Support
+              <p className="text-xl sm:text-2xl font-semibold text-cyan-400/90 font-mono min-h-[2rem] sm:min-h-[2.25rem]">
+                <TypingText
+                  phrases={['Web Developer', 'Front End Developer', 'Back End Developer', 'Technical Support']}
+                  staticText="Web Developer | Front End Developer | Back End Developer | Technical Support"
+                />
               </p>
             </div>
 

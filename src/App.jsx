@@ -10,6 +10,9 @@ import Certifications from './components/Certifications';
 import ResumeModal from './components/ResumeModal';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ITSupport from './components/ITSupport';
+import Reveal from './components/Reveal';
+import ScrollProgress from './components/ScrollProgress';
 import { trackEvent } from './lib/track';
 
 export default function App() {
@@ -37,6 +40,9 @@ export default function App() {
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_50%_50%_at_0%_80%,rgba(16,185,129,0.10),rgba(255,255,255,0))] pointer-events-none z-0" />
       <div className="fixed inset-0 bg-[#07090e]/50 pointer-events-none z-0 backdrop-blur-[1px]" />
 
+      {/* Scroll progress bar */}
+      <ScrollProgress />
+
       {/* Relative container for content layers */}
       <div className="relative z-10">
         {/* Sticky Navigation Bar */}
@@ -45,13 +51,14 @@ export default function App() {
         {/* Main Content Sections */}
         <main>
           <Hero onOpenResumeModal={openResumeModal} />
-          <About />
-          <Projects />
-          <Skills />
-          <Experience />
-          <Education />
-          <Certifications />
-          <Contact />
+          <Reveal><About /></Reveal>
+          <Reveal><Projects /></Reveal>
+          <Reveal><Skills /></Reveal>
+          <Reveal><ITSupport /></Reveal>
+          <Reveal><Experience /></Reveal>
+          <Reveal><Education /></Reveal>
+          <Reveal><Certifications /></Reveal>
+          <Reveal><Contact /></Reveal>
         </main>
 
         {/* Footer */}

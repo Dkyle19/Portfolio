@@ -212,3 +212,21 @@
 .animate-marquee-right:hover {
   animation-play-state: paused;
 }
+
+/* Light mode: inverts the dark design and rotates hues back so accent colours stay close to the originals.
+   Photos and video are inverted a second time so they look normal. */
+html.light {
+  filter: invert(1) hue-rotate(180deg);
+}
+html.light img,
+html.light video,
+html.light picture,
+html.light iframe {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
